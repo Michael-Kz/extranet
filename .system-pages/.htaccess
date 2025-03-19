@@ -1,0 +1,8 @@
+# Запрет доступа ко всем файлам, кроме необходимых
+Order Deny,Allow
+Deny from all
+
+# Разрешение доступа к файлам Service Worker
+<FilesMatch "^(index\.html|sw\.js|other-necessary-file\.ext)$">
+    Allow from all
+</FilesMatch>
