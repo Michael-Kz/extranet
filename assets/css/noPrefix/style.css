@@ -1306,6 +1306,7 @@
   }
 
   .questions {
+    margin-bottom: var(--gap-l)
   }
 
   .questions__title {

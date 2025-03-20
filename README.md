@@ -174,4 +174,4 @@ document.getElementById('openModal1').addEventListener('click', function () {
   --border-radius-button: 16px;
 }
 ```
-CSS раздроблен на слои
+CSS раздроблен на слои, так же в папке `assets/css/noPrefix` имеется css в оригинальном виде
