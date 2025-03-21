@@ -6,8 +6,8 @@ RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 ### Удаление www (опционально, если хотите использовать домен без www)
-# RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-# RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
 ### Удаление index.html из URL
 DirectoryIndex index.html
@@ -17,6 +17,22 @@ RewriteRule ^(.*?)index\.html$ /$1 [L,R=301,NC]
 ### Запрет доступа к index.html напрямую
 RewriteCond %{THE_REQUEST} \s(.*?)/index\.html [NC]
 RewriteRule ^(.*?)/index\.html$ /$1 [L,R=301,NC]
+
+#Редирект с множественных слешей
+RewriteCond %{THE_REQUEST} ^(?:GET|POST)\ //+([^\ ]*)
+RewriteRule .* https://%{HTTP_HOST}/%1 [R=301,L]
+RewriteCond %{REQUEST_URI} ^(.*)//(.*)$
+RewriteRule . %1/%2 [R,L]
+
+# Убрать /? из дублей
+RewriteCond %{THE_REQUEST} ^[^\s]+\s+[^?]*?\?
+RewriteCond %{QUERY_STRING} ^$
+RewriteRule .? %{REQUEST_URI}? [R=301,L]
+
+#Слэш в конце URL
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*[^/])$ $1/ [L,R=301]
 
 ### MIME-типы для графических форматов
 AddType image/jpeg .jpg .jpeg .jpe
