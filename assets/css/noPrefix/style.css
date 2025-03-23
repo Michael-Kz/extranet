@@ -6,7 +6,7 @@
     font-family: 'MontserratRegular';
     font-style: normal;
     src: url('/assets/fonts/Montserrat-Regular.ttf') format('truetype');
-    font-display: fallback;
+    font-display: swap;
   }
 
   @font-face {
@@ -14,7 +14,7 @@
     font-style: normal;
     font-weight: 500;
     src: url('/assets/fonts/Montserrat-Medium.ttf') format('truetype');
-    font-display: fallback;
+    font-display: swap;
   }
 
   /* @font-face { font-family: 'MontserratBold'; font-style: normal; font-weight: 700; src: url('/assets/fonts/Montserrat-Bold.ttf') format('truetype'); font-display: swap; } */
