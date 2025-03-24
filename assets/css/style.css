@@ -1171,7 +1171,7 @@
         rgba(255, 255, 255, 0.7)
       ),
       linear-gradient(95.74deg, #6cc8f1 -3.19%, #b97bff 102.83%);
-    background-image: url('/assets/images/backgrounds/bg.png');
+    background-image: url('/assets/images/backgrounds/bg.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2345,7 +2345,7 @@
     }
 
     .promo {
-      background-image: url('/assets/images/backgrounds/bg-900.png');
+      background-image: url('/assets/images/backgrounds/bg-900.webp');
     }
 
     .slider--placement-options {
@@ -2465,7 +2465,7 @@
     }
 
     .promo {
-      background-image: url('/assets/images/backgrounds/bg-360.png');
+      background-image: url('/assets/images/backgrounds/bg-360.webp');
       background-position: -195px;
       max-height: 650px;
     }

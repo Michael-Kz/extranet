@@ -8,13 +8,14 @@
   </title>
   <meta name="description"
     content="Добавьте свой отель на Alean и привлеките больше туристов! Вы будете на сайте, в сети турагентств и корпоративных гостей.">
-    <link rel="preload" as="image" href="./assets/images/backgrounds/bg-360.png">
-  <link rel="preload" as="image" href="./assets/images/backgrounds/bg-900.png">
-  <link rel="preload" as="image" href="./assets/images/backgrounds/bg">
-    <link rel="preload" as="style" href="./assets/css/style.css">
-  <link rel="preload" as="script" href="./assets/js/main.js">
   <!-- Строчку ниже открыть только после постановки на основной домен!!!  -->
   <!-- <base href="https://extranet.alean.ru">  -->
+  <link rel="preload" as="image" href="./assets/images/backgrounds/bg-360.webp"
+    media="(max-width: 359px)">
+  <link rel="preload" as="image" href="./assets/images/backgrounds/bg-900.webp"
+    media="(min-width: 360px) and (max-width: 899px)">
+  <link rel="preload" as="image" href="./assets/images/backgrounds/bg.webp"
+    media="(min-width: 900px)">
   <link rel="canonical" href="https://extranet.alean.ru">
   <link rel="publisher" href="https://extranet.alean.ru">
   <meta name="author" content="ООО Алеан">
@@ -84,7 +85,6 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/animate.css">
   <script src="./assets/js/animated.js"></script>
-
 </head>
 
 <body>
@@ -136,8 +136,7 @@
             Получите больше бронирований, автоматизируй работу с Алеан </p> <a
             href="https://t.me/aleanhotels"
             class="promo__button button button--primary slideInUp animated"
-            target="_blank" rel="nofollow noopener noreferrer"
-            data-animated-delay="0.1"> <span class="button__text"> Хочу больше
+            target="_blank" rel="nofollow noopener noreferrer"> <span class="button__text"> Хочу больше
               продаж </span> </a>
         </div>
       </div> <span class="mask--ellipse-bottom"></span>
@@ -151,7 +150,7 @@
           <div class="benefits__description">будьте с лучшими
           </div> <img src="./assets/images/icons/alean-gray.svg"
             alt="Иконка Alean (серый)" class="benefits__icon animated slideFade"
-            data-animated-delay="1">
+            data-animated-delay="0.1">
         </div>
         <div class="benefits__item"> <b class="h3 benefits__title">1 млн</b>
           <span class="benefits__subtitle">туристов / год</span>
@@ -825,8 +824,7 @@
     </div>
   </footer>
   <script src="./assets/js/scroll.js"></script>
-  <!-- <script src="./assets/js/videoPlayer.js" async></script> -->
-  <script src="./assets/js/slider.js" async></script>
+  <script src="./assets/js/slider.js" defer="defer"></script>
   <script src="./assets/js/main.js"></script>
 
   <script type="application/ld+json">
