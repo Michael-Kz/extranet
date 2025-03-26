@@ -1797,6 +1797,9 @@
     .advantages__count-members {
       flex: 0 0 100%;
     }
+    .accordion__item:not(.accordion__item_show) .accordion__wrapper {
+      padding-bottom: 16px;
+    }
   }
 
   @media (width >=600px) and (width < 900px) {

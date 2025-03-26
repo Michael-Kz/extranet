@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
-
+<!--->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,9 @@
     media="(min-width: 360px) and (max-width: 899px)">
   <link rel="preload" as="image" href="./assets/images/backgrounds/bg.webp"
     media="(min-width: 900px)">
-  <link rel="preload" href="./assets/css/style.css" media="(max-width: 899px)">
+    
+      <link rel="preload" as="style" href="./assets/css/style.css">
+    
   <link rel="canonical" href="https://extranet.alean.ru">
   <link rel="publisher" href="https://extranet.alean.ru">
   <meta name="author" content="ООО Алеан">
@@ -86,6 +88,7 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/animate.css">
   <script src="./assets/js/animated.js"></script>
+  
 </head>
 
 <body>
@@ -137,8 +140,7 @@
             Получите больше бронирований, автоматизируй работу с Алеан </p> <a
             href="https://t.me/aleanhotels"
             class="promo__button button button--primary slideInUp animated"
-            target="_blank" rel="nofollow noopener noreferrer"> <span
-              class="button__text"> Хочу больше
+            target="_blank" rel="nofollow noopener noreferrer"> <span class="button__text"> Хочу больше
               продаж </span> </a>
         </div>
       </div> <span class="mask--ellipse-bottom"></span>
@@ -301,7 +303,7 @@
               <div class="slider__item" itemprop="image" itemscope
                 itemtype="http://schema.org/ImageObject">
                 <div class="slider__image"> <img
-                    src="./assets/images/hotels.webp" alt="Гостиницы"
+                    src="./assets/images/hotels.png" alt="Гостиницы"
                     class="slider__image-link" itemprop="contentUrl"> </div>
                 <div class="slider__text placement-options__slider-text"
                   itemprop="caption">Гостиницы</div>
@@ -309,7 +311,7 @@
               <div class="slider__item" itemprop="image" itemscope
                 itemtype="http://schema.org/ImageObject">
                 <div class="slider__image"> <img
-                    src="./assets/images/hostels.webp" alt="Хостелы"
+                    src="./assets/images/hostels.png" alt="Хостелы"
                     class="slider__image-link" itemprop="contentUrl"> </div>
                 <div class="slider__text placement-options__slider-text"
                   itemprop="caption">Хостелы</div>
@@ -317,7 +319,7 @@
               <div class="slider__item" itemprop="image" itemscope
                 itemtype="http://schema.org/ImageObject">
                 <div class="slider__image"> <img
-                    src="./assets/images/camp-sites.webp" alt="Турбазы"
+                    src="./assets/images/camp-sites.png" alt="Турбазы"
                     class="slider__image-link" itemprop="contentUrl"> </div>
                 <div class="slider__text placement-options__slider-text"
                   itemprop="caption">Турбазы</div>
@@ -325,7 +327,7 @@
               <div class="slider__item" itemprop="image" itemscope
                 itemtype="http://schema.org/ImageObject">
                 <div class="slider__image"> <img
-                    src="./assets/images/camping.webp" alt="Кемпинги"
+                    src="./assets/images/camping.png" alt="Кемпинги"
                     class="slider__image-link" itemprop="contentUrl"> </div>
                 <div class="slider__text placement-options__slider-text"
                   itemprop="caption">Кемпинг</div>
@@ -333,7 +335,7 @@
               <div class="slider__item" itemprop="image" itemscope
                 itemtype="http://schema.org/ImageObject">
                 <div class="slider__image"> <img
-                    src="./assets/images/sanatorium.webp" alt="Санатории"
+                    src="./assets/images/sanatorium.png" alt="Санатории"
                     class="slider__image-link" itemprop="contentUrl"> </div>
                 <div class="slider__text placement-options__slider-text"
                   itemprop="caption">Санаторий</div>
@@ -341,7 +343,7 @@
               <div class="slider__item" itemprop="image" itemscope
                 itemtype="http://schema.org/ImageObject">
                 <div class="slider__image"> <img
-                    src="./assets/images/guest-houses.webp" alt="Гостевые дома"
+                    src="./assets/images/guest-houses.png" alt="Гостевые дома"
                     class="slider__image-link" itemprop="contentUrl"> </div>
                 <div class="slider__text placement-options__slider-text"
                   itemprop="caption">Гостевые дома</div>
@@ -349,7 +351,7 @@
               <div class="slider__item" itemprop="image" itemscope
                 itemtype="http://schema.org/ImageObject">
                 <div class="slider__image"> <img
-                    src="./assets/images/cottages.webp" alt="Коттеджи"
+                    src="./assets/images/cottages.png" alt="Коттеджи"
                     class="slider__image-link" itemprop="contentUrl"> </div>
                 <div class="slider__text placement-options__slider-text"
                   itemprop="caption">Коттеджи</div>
@@ -825,11 +827,10 @@
       </div>
     </div>
   </footer>
-  <script src="./assets/js/main.js"></script>
   <script src="./assets/js/scroll.js"></script>
-  <script src="./assets/js/slider.js"></script>
-
-
+  
+  <script src="./assets/js/main.js" async></script>
+<script src="./assets/js/slider.js"></script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
