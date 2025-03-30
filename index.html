@@ -1,880 +1,1571 @@
 <!DOCTYPE html>
 <html lang="ru">
-<!--->
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Экстранет Алеан - Продать номер стало еще проще. В ТОПе OTA продаж
-  </title>
-  <meta name="description"
-    content="Добавьте свой отель на Alean и привлеките больше туристов! Вы будете на сайте, в сети турагентств и корпоративных гостей.">
-  <!-- Строчку ниже открыть только после постановки на основной домен!!!  -->
-  <!-- <base href="https://extranet.alean.ru">  -->
-  <link rel="preload" as="image" href="./assets/images/backgrounds/bg-360.webp"
-    media="(max-width: 359px)">
-  <link rel="preload" as="image" href="./assets/images/backgrounds/bg-900.webp"
-    media="(min-width: 360px) and (max-width: 899px)">
-  <link rel="preload" as="image" href="./assets/images/backgrounds/bg.webp"
-    media="(min-width: 900px)">
-    
-      <link rel="preload" as="style" href="./assets/css/style.css">
-    
-  <link rel="canonical" href="https://extranet.alean.ru">
-  <link rel="publisher" href="https://extranet.alean.ru">
-  <meta name="author" content="ООО Алеан">
-  <meta name="copyright" content="ООО Алеан">
-  <meta name="robots" content="index follow">
-  <meta name="yandex" content="noyaca noarchive all">
-  <meta property="og:title"
-    content="Продать номер стало еще проще. В ТОПе OTA продаж ">
-  <meta property="og:description"
-    content="Добавьте свой отель на Alean и привлеките больше туристов!">
-  <meta property="og:url" content="https://extranet.alean.ru">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Эстранет Алеан">
-  <meta property="og:image" content="./assets/images/banner__promo.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <!-- URL_изображения_1200x630 -->
-  <meta property="og:image" content="./assets/images/banner__promo.png">
-  <meta property="og:image:width" content="600">
-  <meta property="og:image:height" content="315">
-  <!-- URL_изображения_600x315 -->
-  <meta property="og:image" content="./assets/images/banner__promo.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="1200">
-  <!-- URL_изображения_1200x1200 -->
-  <meta property="og:image" content="./assets/images/banner__promo.png">
-  <meta property="og:image:width" content="900">
-  <meta property="og:image:height" content="600">
-  <!-- URL_изображения_900x600 -->
-  <meta property="og:image" content="./assets/images/banner__promo.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="900">
-  <!-- URL_изображения_1200x900 -->
-  <meta property="og:locale" content="ru_RU"> <!--  -->
-  <link rel="shortcut icon" href="./assets/images/favicon/favicon.ico"
-    type="image/x-icon">
-  <link rel="apple-touch-icon" sizes="57x57"
-    href="./assets/images/favicon/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="72x72"
-    href="./assets/images/favicon/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76"
-    href="./assets/images/favicon/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114"
-    href="./assets/images/favicon/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120"
-    href="./assets/images/favicon/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144"
-    href="./assets/images/favicon/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152"
-    href="./assets/images/favicon/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180"
-    href="./assets/images/favicon/apple-touch-icon-180x180.png">
-  <link rel="mask-icon" href="./assets/images/favicon/safari-pinned-tab.svg"
-    color="#769edb">
-  <link rel="icon" type="image/png" sizes="16x16"
-    href="./assets/images/favicon/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32"
-    href="./assets/images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96"
-    href="./assets/images/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="192x192"
-    href="./assets/images/favicon/android-icon-192x192.png">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage"
-    content="./assets/images/favicon/mstile-144x144.png">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/css/animate.css">
-  <script src="./assets/js/animated.js"></script>
-  
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Экстранет Алеан - Продать номер стало еще проще. В ТОПе OTA продаж
+    </title>
+    <meta
+      name="description"
+      content="Добавьте свой отель на Alean и привлеките больше туристов! Вы будете на сайте, в сети турагентств и корпоративных гостей."
+    />
+    <!-- Строчку ниже открыть только после постановки на основной домен!!!  -->
+    <!-- <base href="https://extranet.alean.ru">  -->
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/images/backgrounds/bg-360.webp"
+      media="(max-width: 359px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/images/backgrounds/bg-900.webp"
+      media="(min-width: 360px) and (max-width: 899px)"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="./assets/images/backgrounds/bg.webp"
+      media="(min-width: 900px)"
+    />
 
-<body>
-  <header class="header" id="header"> <!-- noindex --> <a
-      href="https://www.alean.ru/" class="header__logo logo" itemscope
-      itemtype="http://schema.org/ImageObject"
-      rel="nofollow noopener noreferrer" target="_blank"> <img
-        src="./assets/images/logos/alean.svg" class="logo__image"
-        alt="Национальный туроператор Алеан" itemprop="contentUrl"
-        loading="lazy">
-      <meta content="Логотип национального туроператора Алеан" itemprop="name">
-      <meta
-        content="Экстранет Алеан - Продать номер стало еще проще. В ТОПе OTA продаж"
-        itemprop="description">
-    </a> <!-- /noindex -->
-    <div class="header__menu menu">
-      <div class="menu__icon"> <span class="menu__icon--line"></span> <span
-          class="menu__icon--line"></span> <span
-          class="menu__icon--line"></span> </div>
-      <nav class="menu__body">
-        <ul class="menu__list" itemscope
-          itemtype="http://www.schema.org/SiteNavigationElement">
-          <li class="menu__item" itemprop="name"> <a href="#partners"
-              class="menu__link" itemprop="url">Партнеры</a> </li>
-          <li class="menu__item" itemprop="name"> <a href="#advantages"
-              class="menu__link" itemprop="url">Преимущества</a> </li>
-          <li class="menu__item" itemprop="name"> <a
-              href="#types-legal-entities" class="menu__link"
-              itemprop="url">Виды ЮЛ</a> </li>
-          <li class="menu__item" itemprop="name"> <a href="#reviews"
-              class="menu__link" itemprop="url">Отзывы</a> </li>
-          <li class="menu__item" itemprop="name"> <a href="#questions"
-              class="menu__link" itemprop="url">Вопросы</a> </li>
-        </ul>
-      </nav>
-    </div> <!-- noindex --> <a href="https://t.me/aleanhotels"
-      class="header__button button button--primary"
-      rel="nofollow noopener noreferrer" target="_blank"> <span
-        class="button__text"> Зарегистрироваться </span> </a> <!-- /noindex -->
-  </header>
-  <main>
-    <div class="promo" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="promo__wrapper">
-        <div class="promo__text">
-          <h1 class="h1 promo__title fadeInUp animated" itemprop="name">
-            Система<br>увеличения продаж </h1>
-          <p class="h2 promo__description fadeInUp animated"
-            itemprop="description">
-            Получите больше бронирований, автоматизируй работу с Алеан </p> <a
-            href="https://t.me/aleanhotels"
-            class="promo__button button button--primary slideInUp animated"
-            target="_blank" rel="nofollow noopener noreferrer"> <span class="button__text"> Хочу больше
-              продаж </span> </a>
-        </div>
-      </div> <span class="mask--ellipse-bottom"></span>
-    </div>
-    <section id="partners" class="partners">
-      <h2 class="h1 partners__heading">Невозможно не продать</h2>
-      <p class="h2 partners__subtitle">Огромная пользовательская активность</p>
-      <div class="partners__benefits benefits">
-        <div class="benefits__item"> <b class="h3 benefits__title">ТОП-5</b>
-          <span class="benefits__subtitle">ОТА</span>
-          <div class="benefits__description">будьте с лучшими
-          </div> <img src="./assets/images/icons/alean-gray.svg"
-            alt="Иконка Alean (серый)" class="benefits__icon animated slideFade"
-            data-animated-delay="0.1">
-        </div>
-        <div class="benefits__item"> <b class="h3 benefits__title">1 млн</b>
-          <span class="benefits__subtitle">туристов / год</span>
-          <div class="benefits__description"> разместите часть <br
-              class="transfer">туристов в вашем отеле </div> <img
-            src="./assets/images/icons/alean-orange.svg"
-            alt="Иконка Alean (оранжевый)"
-            class="benefits__icon animated slideFade" data-animated-delay="3">
-        </div>
-        <div class="benefits__item"> <b class="h3 benefits__title">30 млн</b>
-          <span class="benefits__subtitle">посетителей</span>
-          <div class="benefits__description"> срочно покажите какой у вас
-            отель </div> <img src="./assets/images/icons/alean-blue.svg"
-            alt="Иконка Alean (синий)" class="benefits__icon animated slideFade"
-            data-animated-delay="5">
-        </div>
-        <div class="benefits__item"> <b class="h3 benefits__title">15 тыс</b>
-          <span class="benefits__subtitle">турагентств</span>
-          <div class="benefits__description">хотите быть в списке?
-          </div> <img src="./assets/images/icons/alean-pink.svg"
-            alt="Иконка Alean (розовый)"
-            class="benefits__icon animated slideFade" data-animated-delay="5">
-        </div>
-      </div>
-      <div class="partners__members members">
-        <div class="members__item"> <img src="./assets/images/logos/station.svg"
-            alt="Логотип Station" class="members__logo"> </div>
-        <div class="members__item"> <img
-            src="./assets/images/logos/gazprom-polyana.svg"
-            alt="Логотип Gazprom Polyana" class="members__logo"> </div>
-        <div class="members__item"> <img
-            src="./assets/images/logos/best-western-plus.svg"
-            alt="Логотип Best Western Plus" class="members__logo"> </div>
-        <div class="members__item"> <img src="./assets/images/logos/hilton.svg"
-            alt="Логотип Hilton" class="members__logo"> </div>
-        <div class="members__item"> <img src="./assets/images/logos/azimut.svg"
-            alt="Логотип Azimut" class="members__logo"> </div>
-        <div class="members__item"> <img src="./assets/images/logos/yahonty.svg"
-            alt="Логотип Yahonty" class="members__logo"> </div>
-        <div class="members__item"> <img
-            src="./assets/images/logos/grace-group.svg"
-            alt="Логотип Grace Group" class="members__logo"> </div>
-      </div>
-      <div class="partners__members members">
-        <div class="members__item"> <img src="./assets/images/logos/station.svg"
-            alt="Логотип Station" class="members__logo"> </div>
-        <div class="members__item"> <img
-            src="./assets/images/logos/gazprom-polyana.svg"
-            alt="Логотип Gazprom Polyana" class="members__logo"> </div>
-        <div class="members__item"> <img
-            src="./assets/images/logos/best-western-plus.svg"
-            alt="Логотип Best Western Plus" class="members__logo"> </div>
-        <div class="members__item"> <img src="./assets/images/logos/hilton.svg"
-            alt="Логотип Hilton" class="members__logo"> </div>
-        <div class="members__item"> <img src="./assets/images/logos/azimut.svg"
-            alt="Логотип Azimut" class="members__logo"> </div>
-        <div class="members__item"> <img src="./assets/images/logos/yahonty.svg"
-            alt="Логотип Yahonty" class="members__logo"> </div>
-        <div class="members__item"> <img
-            src="./assets/images/logos/grace-group.svg"
-            alt="Логотип Grace Group" class="members__logo"> </div>
-      </div>
-      <div class="partners__benefits benefits">
-        <div class="benefits__item"> <b class="h3 benefits__title">100</b>
-          <span class="benefits__subtitle">блогеров</span>
-          <div class="benefits__description">бесплатная реклама вашего
-            отеля</div> <img src="./assets/images/icons/alean-orange.svg"
-            alt="Иконка Alean (оранжевый)"
-            class="benefits__icon animated slideFade">
-        </div>
-        <div class="benefits__item"> <b class="h3 benefits__title">20 тыс</b>
-          <span class="benefits__subtitle">в Telegram</span>
-          <div class="benefits__description"> скорее сообщите им о своем
-            отеле </div> <img src="./assets/images/icons/alean-pink.svg"
-            alt="Иконка Alean (розовый)"
-            class="benefits__icon animated slideFade">
-        </div>
-        <div class="benefits__item benefits__item--wide"> <b
-            class="h3 benefits__title">500</b> <span
-            class="benefits__subtitle">корпоративных партнеров</span>
-          <div class="benefits__description"> они могут разместиться
-            именно в вашем отеле </div> <img
-            src="./assets/images/icons/alean-gray.svg"
-            alt="Иконка Alean (серый)"
-            class="benefits__icon animated slideFade">
-        </div>
-      </div>
-    </section>
-    <section id="advantages" class="advantages">
-      <div class="advantages__wrapper">
-        <h2 class="h1 advantages__title">Лучшие бизнес решения</h2>
-        <div class="advantages__count-members count-members">
-          <div class="count-members__wrapper"> <b class="count-members__counter"
-              id="counter">0</b> <b
-              class="count-members__plus animated rotateInDownLeft"
-              data-animated-delay="1.9s"> + </b> </div> <span
-            class="h2 count-members__text"> отельеров<br>выбирают Алеан
-          </span>
-        </div>
-        <div class="advantages__list">
-          <div class="advantages__item">
-            <div class="advantages__image"> <img
-                src="./assets/images/icons/alean-violet.svg"
-                alt="Быстрый старт продаж"
-                class="advantages__background animated slideFade"> <img
-                src="./assets/images/icons/speed.svg" alt="Быстрый старт продаж"
-                class="advantages__icon animated fadeIn"> </div>
-            <div class="h4 advantages__text">Быстрый старт продаж</div>
-          </div>
-          <div class="advantages__item">
-            <div class="advantages__image"> <img
-                src="./assets/images/icons/options.svg"
-                alt="Быстрый старт продаж" class="advantages__icon"> <img
-                src="./assets/images/icons/alean-green.svg"
-                alt="Быстрый старт продаж"
-                class="advantages__background animated slideFade"> </div>
-            <div class="h4 advantages__text"> Гибкие настройки тарифных планов
-            </div>
-          </div>
-          <div class="advantages__item">
-            <div class="advantages__image"> <img
-                src="./assets/images/icons/manager.svg"
-                alt="Быстрый старт продаж" class="advantages__icon"> <img
-                src="./assets/images/icons/alean-pink-peach.svg"
-                alt="Быстрый старт продаж"
-                class="advantages__background animated slideFade"> </div>
-            <div class="h4 advantages__text">Личный аккаунт менеджер</div>
-          </div>
-        </div>
-      </div>
-      <div class="container" itemscope
-        itemtype="http://schema.org/ImageGallery">
-        <div class="slider slider--placement-options" data-slider="slider"
-          data-loop="true" data-scale="true" data-autoplay="false">
-          <div class="slider__navigation"> <button
-              class="button button--slider slider__button-prev"
-              aria-label="Предыдущий слайд"> <img
-                src="./assets/images/icons/arrow-left.svg" alt=""
-                class="button__icon"> </button> <button
-              class="button button--slider slider__button-next"
-              aria-label="Следующий слайд"> <img
-                src="./assets/images/icons/arrow-right.svg" alt=""
-                class="button__icon"> </button> </div>
-          <div class="slider__wrapper">
-            <div class="slider__items">
-              <div class="slider__item" itemprop="image" itemscope
-                itemtype="http://schema.org/ImageObject">
-                <div class="slider__image"> <img
-                    src="./assets/images/hotels.png" alt="Гостиницы"
-                    class="slider__image-link" itemprop="contentUrl"> </div>
-                <div class="slider__text placement-options__slider-text"
-                  itemprop="caption">Гостиницы</div>
-              </div>
-              <div class="slider__item" itemprop="image" itemscope
-                itemtype="http://schema.org/ImageObject">
-                <div class="slider__image"> <img
-                    src="./assets/images/hostels.png" alt="Хостелы"
-                    class="slider__image-link" itemprop="contentUrl"> </div>
-                <div class="slider__text placement-options__slider-text"
-                  itemprop="caption">Хостелы</div>
-              </div>
-              <div class="slider__item" itemprop="image" itemscope
-                itemtype="http://schema.org/ImageObject">
-                <div class="slider__image"> <img
-                    src="./assets/images/camp-sites.png" alt="Турбазы"
-                    class="slider__image-link" itemprop="contentUrl"> </div>
-                <div class="slider__text placement-options__slider-text"
-                  itemprop="caption">Турбазы</div>
-              </div>
-              <div class="slider__item" itemprop="image" itemscope
-                itemtype="http://schema.org/ImageObject">
-                <div class="slider__image"> <img
-                    src="./assets/images/camping.png" alt="Кемпинги"
-                    class="slider__image-link" itemprop="contentUrl"> </div>
-                <div class="slider__text placement-options__slider-text"
-                  itemprop="caption">Кемпинг</div>
-              </div>
-              <div class="slider__item" itemprop="image" itemscope
-                itemtype="http://schema.org/ImageObject">
-                <div class="slider__image"> <img
-                    src="./assets/images/sanatorium.png" alt="Санатории"
-                    class="slider__image-link" itemprop="contentUrl"> </div>
-                <div class="slider__text placement-options__slider-text"
-                  itemprop="caption">Санаторий</div>
-              </div>
-              <div class="slider__item" itemprop="image" itemscope
-                itemtype="http://schema.org/ImageObject">
-                <div class="slider__image"> <img
-                    src="./assets/images/guest-houses.png" alt="Гостевые дома"
-                    class="slider__image-link" itemprop="contentUrl"> </div>
-                <div class="slider__text placement-options__slider-text"
-                  itemprop="caption">Гостевые дома</div>
-              </div>
-              <div class="slider__item" itemprop="image" itemscope
-                itemtype="http://schema.org/ImageObject">
-                <div class="slider__image"> <img
-                    src="./assets/images/cottages.png" alt="Коттеджи"
-                    class="slider__image-link" itemprop="contentUrl"> </div>
-                <div class="slider__text placement-options__slider-text"
-                  itemprop="caption">Коттеджи</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="types-legal-entities" id="types-legal-entities"> <span
-        class="mask--ellipse-top"></span>
-      <div class="types-legal-entities__wrapper">
-        <h2 class="h1 types-legal-entities__title"> Нужно быть юр. лицом или ИП?
-        </h2>
-        <aside class="types-legal-entities__promo">
-          <p class="h2 types-legal-entities__subtitle"> Без ограничений по
-            форме
-            регистрации! </p>
-          <p class="types-legal-entities__description"> Зарегистрировать
-            объект
-            на наших площадках могут индивидуальные предприниматели и
-            юридические лица. </p>
-        </aside>
-        <aside class="types-legal-entities__choice-tariff choice-tariff"
-          data-radio-group="tariff">
-          <h4 class="h2 choice-tariff__title">
-            Регистрация </h4>
-          <form class="choice-tariff__form">
-            <div class="radio"> <label class="radio__label"> <input checked
-                  type="radio" name="options" class="radio__input"
-                  data-radio-option
-                  value="utm_campaign=%D0%BE%D0%B1%D1%89%D0%B8%D0%B9+%D1%82%D1%80%D0%B0%D1%84%D0%B8%D0%BA+%D1%8E%D1%80.+%D0%BB%D0%B8%D1%86%D0%BE&utm_content=%D1%8E%D1%80.+%D0%BB%D0%B8%D1%86%D0%BE">
-                <span class="radio__text">Юридическое лицо</span> </label>
-            </div>
-            <div class="radio"> <label class="radio__label"> <input type="radio"
-                  name="options" class="radio__input" data-radio-option
-                  value="utm_campaign=%D0%BE%D0%B1%D1%89%D0%B8%D0%B9+%D1%82%D1%80%D0%B0%D1%84%D0%B8%D0%BA+%D0%B8%D0%BF&utm_content=%D0%B8%D0%BF">
-                <span class="radio__text">Индивидуальный
-                  предприниматель</span>
-              </label> </div>
-          </form> <button type="button"
-            class="choice-tariff__button button button--primary pulse"
-            data-submit-button> <span
-              class="button__text">Зарегистрироваться</span>
-          </button>
-        </aside>
-      </div> <span class="mask--ellipse-bottom"></span>
-    </section>
-    <section id="reviews" class="reviews">
-      <h2 class="h1 reviews__title">Отельеры о нас</h2>
-      <p class="h2 reviews__subtitle">Все честно: преимущества и недостатки</p>
-      <div class="container">
-        <div class="slider slider--reviews" data-slider="slider"
-          data-loop="true">
-          <div class="slider__navigation"> <button
-              class="button button--slider slider__button-prev"> <img
-                src="./assets/images/icons/arrow-left.svg" alt=""
-                class="button__icon"> </button> <button
-              class="button button--slider slider__button-next"> <img
-                src="./assets/images/icons/arrow-right.svg" alt=""
-                class="button__icon"> </button> </div>
-          <div class="slider__wrapper" itemscope
-            itemtype="http://schema.org/UserComments">
-            <div class="slider__items">
-              <div class="slider__item">
-                <div class="reviews__content">
-                  <p class="reviews__text" itemprop="commentText"> Сервис
-                    пользуется большой популярностью у пользователей: приложение
-                    удобное, быстрое, можно использовать Сплит, начисляются
-                    баллы за каждое бронирование. Благодаря этому количество
-                    бронирований от Алеан Экстранет у нас увеличилось, бренд
-                    стал более узнаваемым. Поддержка пользователей и самого
-                    отеля работает очень оперативно. Сервис пользуется большой
-                    популярностью у пользователей: приложение удобное, быстрое,
-                    можно использовать Сплит, начисляются баллы за каждое
-                    бронирование. Благодаря этому количество бронирований от
-                    Алеан Экстранет у нас увеличилось, бренд стал более
-                    узнаваемым. Поддержка пользователей и самого отеля работает
-                    очень оперативно. </p>
-                  <meta content="01-12-2024" itemprop="commentTime"> <span
-                    class="mask--divider"></span>
-                  <div class="reviews__author"> <img
-                      src="./assets/images/author-image2.jpeg" alt=""
-                      class="reviews__author-image">
-                    <div class="reviews__author-text" itemprop="creator"
-                      itemscope="" itemtype="http://schema.org/Person"> <b
-                        class="reviews__author-name" itemprop="name"> Дормидонт
-                        Аполинарьев </b> <span
-                        class="reviews__author-description"> руководитель отдела
-                        продаж и маркетинга «Грацующий пони» </span> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="slider__item">
-                <div class="reviews__content">
-                  <p class="reviews__text" itemprop="commentText"> Сервис
-                    пользуется большой популярностью у пользователей: приложение
-                    удобное, быстрое, можно использовать Сплит, начисляются
-                    баллы за каждое бронирование. Благодаря этому количество
-                    бронирований от Алеан Экстранет у нас увеличилось, бренд
-                    стал более узнаваемым. Поддержка пользователей и самого
-                    отеля работает очень оперативно. Сервис пользуется большой
-                    популярностью у пользователей: приложение удобное, быстрое,
-                    можно использовать Сплит, начисляются баллы за каждое
-                    бронирование. Благодаря этому количество бронирований от
-                    Алеан Экстранет у нас увеличилось, бренд стал более
-                    узнаваемым. Поддержка пользователей и самого отеля работает
-                    очень оперативно. </p>
-                  <!-- <button id="openModal1" class="button button--reviews-video"> <img src="./assets/images/icons/video-square.svg" alt="посмотреть видео-отзыв" class="button__icon"> <span class="button__text"> Видео-отзыв </span> </button> -->
-                  <meta content="01-12-2024" itemprop="commentTime"> <span
-                    class="mask--divider"></span>
-                  <div class="reviews__author"> <img
-                      src="./assets/images/author-image2.jpeg" alt=""
-                      class="reviews__author-image">
-                    <div class="reviews__author-text" itemprop="creator"
-                      itemscope="" itemtype="http://schema.org/Person"> <b
-                        class="reviews__author-name" itemprop="name"> Дормидонт
-                        Аполинарьев </b> <span
-                        class="reviews__author-description"> руководитель отдела
-                        продаж и маркетинга «Грацующий пони» </span> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="slider__item">
-                <div class="reviews__content">
-                  <p class="reviews__text" itemprop="commentText"> Сервис
-                    пользуется большой популярностью у пользователей: приложение
-                    удобное, быстрое, можно использовать Сплит, начисляются
-                    баллы за каждое бронирование. Благодаря этому количество
-                    бронирований от Алеан Экстранет у нас увеличилось, бренд
-                    стал более узнаваемым. Поддержка пользователей и самого
-                    отеля работает очень оперативно. Сервис пользуется большой
-                    популярностью у пользователей: приложение удобное, быстрое,
-                    можно использовать Сплит, начисляются баллы за каждое
-                    бронирование. Благодаря этому количество бронирований от
-                    Алеан Экстранет у нас увеличилось, бренд стал более
-                    узнаваемым. Поддержка пользователей и самого отеля работает
-                    очень оперативно. </p>
-                  <meta content="01-12-2024" itemprop="commentTime"> <span
-                    class="mask--divider"></span>
-                  <div class="reviews__author"> <img
-                      src="./assets/images/author-image2.jpeg" alt=""
-                      class="reviews__author-image">
-                    <div class="reviews__author-text" itemprop="creator"
-                      itemscope="" itemtype="http://schema.org/Person"> <b
-                        class="reviews__author-name" itemprop="name"> Дормидонт
-                        Аполинарьев </b> <span
-                        class="reviews__author-description"> руководитель отдела
-                        продаж и маркетинга «Грацующий пони» </span> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="slider__item">
-                <div class="reviews__content">
-                  <p class="reviews__text" itemprop="commentText"> Сервис
-                    пользуется большой популярностью у пользователей: приложение
-                    удобное, быстрое, можно использовать Сплит, начисляются
-                    баллы за каждое бронирование. Благодаря этому количество
-                    бронирований от Алеан Экстранет у нас увеличилось, бренд
-                    стал более узнаваемым. Поддержка пользователей и самого
-                    отеля работает очень оперативно. Сервис пользуется большой
-                    популярностью у пользователей: приложение удобное, быстрое,
-                    можно использовать Сплит, начисляются баллы за каждое
-                    бронирование. Благодаря этому количество бронирований от
-                    Алеан Экстранет у нас увеличилось, бренд стал более
-                    узнаваемым. Поддержка пользователей и самого отеля работает
-                    очень оперативно. </p>
-                  <meta content="01-12-2024" itemprop="commentTime"> <span
-                    class="mask--divider"></span>
-                  <div class="reviews__author"> <img
-                      src="./assets/images/author-image2.jpeg" alt=""
-                      class="reviews__author-image">
-                    <div class="reviews__author-text" itemprop="creator"
-                      itemscope="" itemtype="http://schema.org/Person"> <b
-                        class="reviews__author-name" itemprop="name"> Дормидонт
-                        Аполинарьев </b> <span
-                        class="reviews__author-description"> руководитель отдела
-                        продаж и маркетинга «Грацующий пони» </span> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="slider__item">
-                <div class="reviews__content">
-                  <p class="reviews__text" itemprop="commentText"> Сервис
-                    пользуется большой популярностью у пользователей: приложение
-                    удобное, быстрое, можно использовать Сплит, начисляются
-                    баллы за каждое бронирование. Благодаря этому количество
-                    бронирований от Алеан Экстранет у нас увеличилось, бренд
-                    стал более узнаваемым. Поддержка пользователей и самого
-                    отеля работает очень оперативно. Сервис пользуется большой
-                    популярностью у пользователей: приложение удобное, быстрое,
-                    можно использовать Сплит, начисляются баллы за каждое
-                    бронирование. Благодаря этому количество бронирований от
-                    Алеан Экстранет у нас увеличилось, бренд стал более
-                    узнаваемым. Поддержка пользователей и самого отеля работает
-                    очень оперативно. </p>
-                  <meta content="01-12-2024" itemprop="commentTime"> <span
-                    class="mask--divider"></span>
-                  <div class="reviews__author"> <img
-                      src="./assets/images/author-image2.jpeg" alt=""
-                      class="reviews__author-image">
-                    <div class="reviews__author-text" itemprop="creator"
-                      itemscope="" itemtype="http://schema.org/Person"> <b
-                        class="reviews__author-name" itemprop="name"> Дормидонт
-                        Аполинарьев </b> <span
-                        class="reviews__author-description"> руководитель отдела
-                        продаж и маркетинга «Грацующий пони» </span> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="slider__item">
-                <div class="reviews__content">
-                  <p class="reviews__text" itemprop="commentText"> Сервис
-                    пользуется большой популярностью у пользователей: приложение
-                    удобное, быстрое, можно использовать Сплит, начисляются
-                    баллы за каждое бронирование. Благодаря этому количество
-                    бронирований от Алеан Экстранет у нас увеличилось, бренд
-                    стал более узнаваемым. Поддержка пользователей и самого
-                    отеля работает очень оперативно. Сервис пользуется большой
-                    популярностью у пользователей: приложение удобное, быстрое,
-                    можно использовать Сплит, начисляются баллы за каждое
-                    бронирование. Благодаря этому количество бронирований от
-                    Алеан Экстранет у нас увеличилось, бренд стал более
-                    узнаваемым. Поддержка пользователей и самого отеля работает
-                    очень оперативно. </p>
-                  <meta content="01-12-2024" itemprop="commentTime"> <span
-                    class="mask--divider"></span>
-                  <div class="reviews__author"> <img
-                      src="./assets/images/author-image2.jpeg" alt=""
-                      class="reviews__author-image">
-                    <div class="reviews__author-text" itemprop="creator"
-                      itemscope="" itemtype="http://schema.org/Person"> <b
-                        class="reviews__author-name" itemprop="name"> Дормидонт
-                        Аполинарьев </b> <span
-                        class="reviews__author-description"> руководитель отдела
-                        продаж и маркетинга «Грацующий пони» </span> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="slider__item">
-                <div class="reviews__content">
-                  <p class="reviews__text" itemprop="commentText"> Сервис
-                    пользуется большой популярностью у пользователей: приложение
-                    удобное, быстрое, можно использовать Сплит, начисляются
-                    баллы за каждое бронирование. Благодаря этому количество
-                    бронирований от Алеан Экстранет у нас увеличилось, бренд
-                    стал более узнаваемым. Поддержка пользователей и самого
-                    отеля работает очень оперативно. Сервис пользуется большой
-                    популярностью у пользователей: приложение удобное, быстрое,
-                    можно использовать Сплит, начисляются баллы за каждое
-                    бронирование. Благодаря этому количество бронирований от
-                    Алеан Экстранет у нас увеличилось, бренд стал более
-                    узнаваемым. Поддержка пользователей и самого отеля работает
-                    очень оперативно. </p>
-                  <meta content="01-12-2024" itemprop="commentTime"> <span
-                    class="mask--divider"></span>
-                  <div class="reviews__author"> <img
-                      src="./assets/images/author-image2.jpeg" alt=""
-                      class="reviews__author-image">
-                    <div class="reviews__author-text" itemprop="creator"
-                      itemscope="" itemtype="http://schema.org/Person"> <b
-                        class="reviews__author-name" itemprop="name"> Дормидонт
-                        Аполинарьев </b> <span
-                        class="reviews__author-description"> руководитель отдела
-                        продаж и маркетинга «Грацующий пони» </span> </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- <div id="modal1" class="modal"> <div class="modal__wrapper"> <button class="modal__button-close"></button> <div class="modal__content"> <div class="video-player"> <video class="video-player__video" loop muted poster="./assets/video/poster.jpg"> <source class="video-player__source" src="./assets/video/video.mp4" type="video/mp4"> </video> </div> </div> </div> </div> -->
-    </section>
-    <section id="questions" class="questions">
-      <h3 class="h1 questions__title">Несколько уточнений</h3>
-      <div id="accordion" class="questions__accordion accordion" itemscope
-        itemtype="https://schema.org/FAQPage">
-        <div class="accordion__item" itemprop="mainEntity" itemscope
-          itemtype="https://schema.org/Question">
-          <div class="accordion__wrapper">
-            <div class="accordion__header" itemprop="name"> Как
-              зарегистрироваться и открыть продажи? </div>
-            <div class="accordion__body" itemscope itemprop="acceptedAnswer"
-              itemtype="https://schema.org/Answer">
-              <div class="accordion__content" itemprop="text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima
-                aliquid veritatis quod architecto doloribus fuga dolor aperiam
-                culpa, officiis blanditiis laborum consequuntur, temporibus id
-                sapiente? Aspernatur delectus praesentium asperiores facilis.
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr class="accordion__divider">
-        <div class="accordion__item" itemprop="mainEntity" itemscope
-          itemtype="https://schema.org/Question">
-          <div class="accordion__wrapper">
-            <div class="accordion__header" itemprop="name"> Как происходят
-              выплаты? </div>
-            <div class="accordion__body" itemscope itemprop="acceptedAnswer"
-              itemtype="https://schema.org/Answer">
-              <div class="accordion__content" itemprop="text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima
-                aliquid veritatis quod architecto doloribus fuga dolor aperiam
-                culpa, officiis blanditiis laborum consequuntur, temporibus id
-                sapiente? Aspernatur delectus praesentium asperiores facilis.
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr class="accordion__divider">
-        <div class="accordion__item" itemprop="mainEntity" itemscope
-          itemtype="https://schema.org/Question">
-          <div class="accordion__wrapper">
-            <div class="accordion__header" itemprop="name"> Как получать
-              предоплату от гостей? </div>
-            <div class="accordion__body" itemscope itemprop="acceptedAnswer"
-              itemtype="https://schema.org/Answer">
-              <div class="accordion__content" itemprop="text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima
-                aliquid veritatis quod architecto doloribus fuga dolor aperiam
-                culpa, officiis blanditiis laborum consequuntur, temporibus id
-                sapiente? Aspernatur delectus praesentium asperiores facilis.
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr class="accordion__divider">
-        <div class="accordion__item" itemprop="mainEntity" itemscope
-          itemtype="https://schema.org/Question">
-          <div class="accordion__wrapper">
-            <div class="accordion__header" itemprop="name"> Как связаться с
-              гостями? </div>
-            <div class="accordion__body" itemscope itemprop="acceptedAnswer"
-              itemtype="https://schema.org/Answer">
-              <div class="accordion__content" itemprop="text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima
-                aliquid veritatis quod architecto doloribus fuga dolor aperiam
-                culpa, officiis blanditiis laborum consequuntur, temporibus id
-                sapiente? Aspernatur delectus praesentium asperiores facilis.
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr class="accordion__divider">
-        <div class="accordion__item" itemprop="mainEntity" itemscope
-          itemtype="https://schema.org/Question">
-          <div class="accordion__wrapper">
-            <div class="accordion__header" itemprop="name"> Как получать
-              уведомления о бронированиях? </div>
-            <div class="accordion__body" itemscope itemprop="acceptedAnswer"
-              itemtype="https://schema.org/Answer">
-              <div class="accordion__content" itemprop="text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima
-                aliquid veritatis quod architecto doloribus fuga dolor aperiam
-                culpa, officiis blanditiis laborum consequuntur, temporibus id
-                sapiente? Aspernatur delectus praesentium asperiores facilis.
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr class="accordion__divider">
-        <div class="accordion__item" itemprop="mainEntity" itemscope
-          itemtype="https://schema.org/Question">
-          <div class="accordion__wrapper">
-            <div class="accordion__header" itemprop="name"> Как
-              зарегистрироваться и открыть продажи? Как связаться со службой
-              поддержки? </div>
-            <div class="accordion__body" itemscope itemprop="acceptedAnswer"
-              itemtype="https://schema.org/Answer">
-              <div class="accordion__content" itemprop="text">
-                Lorem ipsum dolor sit amet conazsectetur, adipisicing elit.
-                Minima aliquid veritatis quod architecto doloribus fuga dolor
-                aperiam culpa, officiis blanditiis laborum consequuntur,
-                temporibus id sapiente? Aspernatur delectus praesentium
-                asperiores facilis.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <aside class="questions__additional-information additional-information">
-        <div class="additional-information__text"> <span
-            class="additional-information__target-text">Остались вопросы?
-          </span><span>Задайте их в Телеграм</span> </div> <!-- noindex --> <a
-          href="https://t.me/aleanhotels"
-          class="questions__button button button--primary" target="_blank"
-          rel="nofollow noopener noreferrer"> <img
-            src="./assets/images/icons/telegram.svg" alt=""
-            class="button__icon animated slideFade"> <span class="button__text">
-            Перейти в Телеграм </span> </a>
-        <!-- /noindex -->
-      </aside>
-    </section>
-  </main>
-  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter"> <span
-      class="mask--ellipse-top"></span>
-    <div class="footer__promo">
-      <div class="h2 footer__title"> Закрытая группа в телеграме для отельеров
-      </div>
-      <div class="footer__description"> Можете задать вопрос и быстро получить
-        ответ.<br> А также общаться с другими отельерами. </div> <a
-        href="https://t.me/aleanhotels"
-        class="footer__button button button--primary" target="_blank"
-        rel="nofollow noopener noreferrer"> <img
-          src="./assets/images/icons/telegram.svg" alt=""
-          class="button__icon animated slideFade"> <span class="button__text">
-          Перейти в Телеграм </span> </a> <!-- /noindex -->
-    </div>
-    <aside class="footer__menu-container"> <!-- noindex --> <a
-        href="https://www.alean.ru/" class="footer__logo logo" itemscope
+    <link rel="preload" as="style" href="./assets/css/style.css" />
+
+    <link rel="canonical" href="https://extranet.alean.ru" />
+    <link rel="publisher" href="https://extranet.alean.ru" />
+    <meta name="author" content="ООО Алеан" />
+    <meta name="copyright" content="ООО Алеан" />
+    <meta name="robots" content="index follow" />
+    <meta name="yandex" content="noyaca noarchive all" />
+    <meta
+      property="og:title"
+      content="Продать номер стало еще проще. В ТОПе OTA продаж "
+    />
+    <meta
+      property="og:description"
+      content="Добавьте свой отель на Alean и привлеките больше туристов!"
+    />
+    <meta property="og:url" content="https://extranet.alean.ru" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Эстранет Алеан" />
+    <meta property="og:image" content="./assets/images/banner__promo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <!-- URL_изображения_1200x630 -->
+    <meta property="og:image" content="./assets/images/banner__promo.png" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="315" />
+    <!-- URL_изображения_600x315 -->
+    <meta property="og:image" content="./assets/images/banner__promo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <!-- URL_изображения_1200x1200 -->
+    <meta property="og:image" content="./assets/images/banner__promo.png" />
+    <meta property="og:image:width" content="900" />
+    <meta property="og:image:height" content="600" />
+    <!-- URL_изображения_900x600 -->
+    <meta property="og:image" content="./assets/images/banner__promo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="900" />
+    <!-- URL_изображения_1200x900 -->
+    <meta property="og:locale" content="ru_RU" />
+    <!--  -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./assets/images/favicon/apple-touch-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./assets/images/favicon/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./assets/images/favicon/apple-touch-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./assets/images/favicon/apple-touch-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./assets/images/favicon/apple-touch-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./assets/images/favicon/apple-touch-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./assets/images/favicon/apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/images/favicon/apple-touch-icon-180x180.png"
+    />
+    <link
+      rel="mask-icon"
+      href="./assets/images/favicon/safari-pinned-tab.svg"
+      color="#769edb"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/images/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./assets/images/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./assets/images/favicon/android-icon-192x192.png"
+    />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./assets/images/favicon/mstile-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/animate.css" />
+    <script src="./assets/js/animated.js"></script>
+  </head>
+
+  <body>
+    <header class="header" id="header">
+      <!-- noindex -->
+      <a
+        href="https://www.alean.ru/"
+        class="header__logo logo"
+        itemscope
         itemtype="http://schema.org/ImageObject"
-        rel="nofollow noopener noreferrer" target="_blank"> <img
-          src="./assets/images/logos/alean.svg" class="logo__image"
-          alt="Национальный туроператор Алеан" itemprop="contentUrl">
-        <meta content="Логотип национального туроператора Алеан"
-          itemprop="name">
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+      >
+        <img
+          decoding="async"
+          loading="lazy"
+          src="./assets/images/logos/alean.svg"
+          class="logo__image"
+          alt="Национальный туроператор Алеан"
+          itemprop="contentUrl"
+        />
+        <meta
+          content="Логотип национального туроператора Алеан"
+          itemprop="name"
+        />
         <meta
           content="Экстранет Алеан - Продать номер стало еще проще. В ТОПе OTA продаж"
-          itemprop="description">
-      </a> <!-- /noindex -->
-      <div class="footer__menu menu">
+          itemprop="description"
+        />
+      </a>
+      <!-- /noindex -->
+      <div class="header__menu menu">
+        <div class="menu__icon">
+          <span class="menu__icon--line"></span>
+          <span class="menu__icon--line"></span>
+          <span class="menu__icon--line"></span>
+        </div>
         <nav class="menu__body">
-          <ul class="menu__list" itemscope
-            itemtype="http://www.schema.org/SiteNavigationElement">
-            <li class="menu__item" itemprop="name"> <a href="#partners"
-                class="menu__link" itemprop="url">Партнеры</a> </li>
-            <li class="menu__item" itemprop="name"> <a href="#advantages"
-                class="menu__link" itemprop="url">Преимущества</a> </li>
-            <li class="menu__item" itemprop="name"> <a
-                href="#types-legal-entities" class="menu__link"
-                itemprop="url">Виды ЮЛ</a> </li>
-            <li class="menu__item" itemprop="name"> <a href="#reviews"
-                class="menu__link" itemprop="url">Отзывы</a> </li>
-            <li class="menu__item" itemprop="name"> <a href="#questions"
-                class="menu__link" itemprop="url">Вопросы</a> </li>
+          <ul
+            class="menu__list"
+            itemscope
+            itemtype="http://www.schema.org/SiteNavigationElement"
+          >
+            <li class="menu__item" itemprop="name">
+              <a href="#partners" class="menu__link" itemprop="url">Партнеры</a>
+            </li>
+            <li class="menu__item" itemprop="name">
+              <a href="#advantages" class="menu__link" itemprop="url"
+                >Преимущества</a
+              >
+            </li>
+            <li class="menu__item" itemprop="name">
+              <a href="#types-legal-entities" class="menu__link" itemprop="url"
+                >Виды ЮЛ</a
+              >
+            </li>
+            <li class="menu__item" itemprop="name">
+              <a href="#reviews" class="menu__link" itemprop="url">Отзывы</a>
+            </li>
+            <li class="menu__item" itemprop="name">
+              <a href="#questions" class="menu__link" itemprop="url">Вопросы</a>
+            </li>
           </ul>
         </nav>
       </div>
-    </aside>
-    <meta content="2025" itemprop="copyrightYear">
-    <meta content="ООО Алеан" itemprop="creator">
-    <div itemscope itemtype="http://schema.org/Organization"
-      style="display: none">
-      <meta itemprop="name" content="ООО Алеан">
-      <meta itemprop="url" content="https://extranet.alean.ru">
-      <meta itemprop="logo"
-        content="https://extranet.alean.r/images/logos/alean.svg">
-      <meta itemprop="telephone" content="+7 (495) 2-300-300">
-      <meta itemprop="email" content="extranet@alean.ru">
-      <div itemprop="address" itemscope
-        itemtype="http://schema.org/PostalAddress">
-        <meta itemprop="streetAddress" content="Верхняя Масловка, 20, с3">
-        <meta itemprop="addressLocality" content="Москва">
-        <meta itemprop="addressRegion" content="Московская область">
-        <meta itemprop="postalCode" content="127083">
-        <meta itemprop="addressCountry" content="RU">
-      </div>
-      <div itemscope itemtype="http://schema.org/ProfessionalService">
-        <meta itemprop="name" content="Экстранет Алеан">
-        <meta itemprop="description"
-          content="Добавьте свой отель на Alean и привлеките больше туристов! Вы будете на сайте, в сети турагентств и корпоративных гостей.">
-        <div itemprop="address" itemscope
-          itemtype="http://schema.org/PostalAddress">
-          <meta itemprop="streetAddress" content="Верхняя Масловка, 20, с3">
-          <meta itemprop="addressLocality" content="Москва">
-          <meta itemprop="addressRegion" content="Московская область">
-          <meta itemprop="postalCode" content="127083">
-          <meta itemprop="addressCountry" content="RU">
+      <!-- noindex -->
+      <a
+        href="https://t.me/aleanhotels"
+        class="header__button button button--primary"
+        rel="nofollow noopener noreferrer"
+        target="_blank"
+      >
+        <span class="button__text"> Зарегистрироваться </span>
+      </a>
+      <!-- /noindex -->
+    </header>
+    <main>
+      <div class="promo" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="promo__wrapper">
+          <div class="promo__text">
+            <h1 class="h1 promo__title fadeInUp animated" itemprop="name">
+              Система<br />увеличения продаж
+            </h1>
+            <p
+              class="h2 promo__description fadeInUp animated"
+              itemprop="description"
+            >
+              Получите больше бронирований, автоматизируй работу с Алеан
+            </p>
+            <a
+              href="https://t.me/aleanhotels"
+              class="promo__button button button--primary slideInUp animated"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+            >
+              <span class="button__text"> Хочу больше продаж </span>
+            </a>
+          </div>
         </div>
-        <meta itemprop="telephone" content="+7 (495) 2-300-300">
+        <span class="mask--ellipse-bottom"></span>
       </div>
-    </div>
-  </footer>
-  <script src="./assets/js/scroll.js"></script>
-  
-  <script src="./assets/js/main.js"></script>
-<script src="./assets/js/slider.js"></script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Экстранет Алеан",
-      "description": "Добавьте свой отель на Alean и привлеките больше туристов! Вы будете на сайте, в сети турагентств и корпоративных гостей.",
-      "serviceType": "LegalService",
-      "provider": {
-        "@type": "Organization",
-        "name": "Алеан",
-        "url": "https://extranet.alean.ru",
-        "logo": "https://extranet.alean.ru/assets/images/logos/alean.svg",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Верхняя Масловка, 20",
-          "addressLocality": "Москва",
-          "postalCode": "127083",
-          "addressCountry": "RU"
-        }
-      },
-      "areaServed": {
-        "@type": "AdministrativeArea",
-        "name": "Москва и Московская область"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "от 15000 руб.",
-        "priceCurrency": "RUB",
-        "availability": "https://schema.org/InStock"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "ratingCount": "87",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "image": [
-        "https://extranet.alean.ru/assets/images/banner__promo.png",
-        "https://extranet.alean.ru/assets/images/banner__promo.png"
-      ]
-    }
+      <section id="partners" class="partners">
+        <h2 class="h1 partners__heading">Невозможно не продать</h2>
+        <p class="h2 partners__subtitle">
+          Огромная пользовательская активность
+        </p>
+        <div class="partners__benefits benefits">
+          <div class="benefits__item">
+            <b class="h3 benefits__title">ТОП-5</b>
+            <span class="benefits__subtitle">ОТА</span>
+            <div class="benefits__description">будьте с лучшими</div>
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/icons/alean-gray.svg"
+              alt="Иконка Alean (серый)"
+              class="benefits__icon animated slideFade"
+              data-animated-delay="0.1"
+            />
+          </div>
+          <div class="benefits__item">
+            <b class="h3 benefits__title">1 млн</b>
+            <span class="benefits__subtitle">туристов / год</span>
+            <div class="benefits__description">
+              разместите часть <br class="transfer" />туристов в вашем отеле
+            </div>
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/icons/alean-orange.svg"
+              alt="Иконка Alean (оранжевый)"
+              class="benefits__icon animated slideFade"
+              data-animated-delay="3"
+            />
+          </div>
+          <div class="benefits__item">
+            <b class="h3 benefits__title">30 млн</b>
+            <span class="benefits__subtitle">посетителей</span>
+            <div class="benefits__description">
+              срочно покажите какой у вас отель
+            </div>
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/icons/alean-blue.svg"
+              alt="Иконка Alean (синий)"
+              class="benefits__icon animated slideFade"
+              data-animated-delay="5"
+            />
+          </div>
+          <div class="benefits__item">
+            <b class="h3 benefits__title">15 тыс</b>
+            <span class="benefits__subtitle">турагентств</span>
+            <div class="benefits__description">хотите быть в списке?</div>
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/icons/alean-pink.svg"
+              alt="Иконка Alean (розовый)"
+              class="benefits__icon animated slideFade"
+              data-animated-delay="5"
+            />
+          </div>
+        </div>
+        <div class="partners__members members">
+          <div class="members__item">
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/logos/station.svg"
+              alt="Логотип Station"
+              class="members__logo"
+            />
+          </div>
+          <div class="members__item">
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/logos/gazprom-polyana.svg"
+              alt="Логотип Gazprom Polyana"
+              class="members__logo"
+            />
+          </div>
+          <div class="members__item">
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/logos/best-western-plus.svg"
+              alt="Логотип Best Western Plus"
+              class="members__logo"
+            />
+          </div>
+          <div class="members__item">
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/logos/hilton.svg"
+              alt="Логотип Hilton"
+              class="members__logo"
+            />
+          </div>
+          <div class="members__item">
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/logos/azimut.svg"
+              alt="Логотип Azimut"
+              class="members__logo"
+            />
+          </div>
+          <div class="members__item">
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/logos/yahonty.svg"
+              alt="Логотип Yahonty"
+              class="members__logo"
+            />
+          </div>
+          <div class="members__item">
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/logos/grace-group.svg"
+              alt="Логотип Grace Group"
+              class="members__logo"
+            />
+          </div>
+        </div>
+        <div class="partners__members members">
+          <div class="members__item">
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/logos/station.svg"
+              alt="Логотип Station"
+              class="members__logo"
+            />
+          </div>
+          <div class="members__item">
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/logos/gazprom-polyana.svg"
+              alt="Логотип Gazprom Polyana"
+              class="members__logo"
+            />
+          </div>
+          <div class="members__item">
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/logos/best-western-plus.svg"
+              alt="Логотип Best Western Plus"
+              class="members__logo"
+            />
+          </div>
+          <div class="members__item">
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/logos/hilton.svg"
+              alt="Логотип Hilton"
+              class="members__logo"
+            />
+          </div>
+          <div class="members__item">
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/logos/azimut.svg"
+              alt="Логотип Azimut"
+              class="members__logo"
+            />
+          </div>
+          <div class="members__item">
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/logos/yahonty.svg"
+              alt="Логотип Yahonty"
+              class="members__logo"
+            />
+          </div>
+          <div class="members__item">
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/logos/grace-group.svg"
+              alt="Логотип Grace Group"
+              class="members__logo"
+            />
+          </div>
+        </div>
+        <div class="partners__benefits benefits">
+          <div class="benefits__item">
+            <b class="h3 benefits__title">100</b>
+            <span class="benefits__subtitle">блогеров</span>
+            <div class="benefits__description">
+              бесплатная реклама вашего отеля
+            </div>
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/icons/alean-orange.svg"
+              alt="Иконка Alean (оранжевый)"
+              class="benefits__icon animated slideFade"
+            />
+          </div>
+          <div class="benefits__item">
+            <b class="h3 benefits__title">20 тыс</b>
+            <span class="benefits__subtitle">в Telegram</span>
+            <div class="benefits__description">
+              скорее сообщите им о своем отеле
+            </div>
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/icons/alean-pink.svg"
+              alt="Иконка Alean (розовый)"
+              class="benefits__icon animated slideFade"
+            />
+          </div>
+          <div class="benefits__item benefits__item--wide">
+            <b class="h3 benefits__title">500</b>
+            <span class="benefits__subtitle">корпоративных партнеров</span>
+            <div class="benefits__description">
+              они могут разместиться именно в вашем отеле
+            </div>
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/icons/alean-gray.svg"
+              alt="Иконка Alean (серый)"
+              class="benefits__icon animated slideFade"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="advantages" class="advantages">
+        <div class="advantages__wrapper">
+          <h2 class="h1 advantages__title">Лучшие бизнес решения</h2>
+          <div class="advantages__count-members count-members">
+            <div class="count-members__wrapper">
+              <b class="count-members__counter" id="counter">0</b>
+              <b
+                class="count-members__plus animated rotateInDownLeft"
+                data-animated-delay="1.9s"
+              >
+                +
+              </b>
+            </div>
+            <span class="h2 count-members__text">
+              отельеров<br />выбирают Алеан
+            </span>
+          </div>
+          <div class="advantages__list">
+            <div class="advantages__item">
+              <div class="advantages__image">
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="./assets/images/icons/alean-violet.svg"
+                  alt="Быстрый старт продаж"
+                  class="advantages__background animated slideFade"
+                />
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="./assets/images/icons/speed.svg"
+                  alt="Быстрый старт продаж"
+                  class="advantages__icon animated fadeIn"
+                />
+              </div>
+              <div class="h4 advantages__text">Быстрый старт продаж</div>
+            </div>
+            <div class="advantages__item">
+              <div class="advantages__image">
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="./assets/images/icons/options.svg"
+                  alt="Быстрый старт продаж"
+                  class="advantages__icon"
+                />
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="./assets/images/icons/alean-green.svg"
+                  alt="Быстрый старт продаж"
+                  class="advantages__background animated slideFade"
+                />
+              </div>
+              <div class="h4 advantages__text">
+                Гибкие настройки тарифных планов
+              </div>
+            </div>
+            <div class="advantages__item">
+              <div class="advantages__image">
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="./assets/images/icons/manager.svg"
+                  alt="Быстрый старт продаж"
+                  class="advantages__icon"
+                />
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="./assets/images/icons/alean-pink-peach.svg"
+                  alt="Быстрый старт продаж"
+                  class="advantages__background animated slideFade"
+                />
+              </div>
+              <div class="h4 advantages__text">Личный аккаунт менеджер</div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="container"
+          itemscope
+          itemtype="http://schema.org/ImageGallery"
+        >
+          <div
+            class="slider slider--placement-options"
+            data-slider="slider"
+            data-loop="true"
+            data-scale="true"
+            data-autoplay="false"
+          >
+            <div class="slider__navigation">
+              <button
+                class="button button--slider slider__button-prev"
+                aria-label="Предыдущий слайд"
+              >
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="./assets/images/icons/arrow-left.svg"
+                  alt=""
+                  class="button__icon"
+                />
+              </button>
+              <button
+                class="button button--slider slider__button-next"
+                aria-label="Следующий слайд"
+              >
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="./assets/images/icons/arrow-right.svg"
+                  alt=""
+                  class="button__icon"
+                />
+              </button>
+            </div>
+            <div class="slider__wrapper">
+              <div class="slider__items">
+                <div
+                  class="slider__item"
+                  itemprop="image"
+                  itemscope
+                  itemtype="http://schema.org/ImageObject"
+                >
+                  <div class="slider__image">
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="./assets/images/hotels.png"
+                      alt="Гостиницы"
+                      class="slider__image-link"
+                      itemprop="contentUrl"
+                    />
+                  </div>
+                  <div
+                    class="slider__text placement-options__slider-text"
+                    itemprop="caption"
+                  >
+                    Гостиницы
+                  </div>
+                </div>
+                <div
+                  class="slider__item"
+                  itemprop="image"
+                  itemscope
+                  itemtype="http://schema.org/ImageObject"
+                >
+                  <div class="slider__image">
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="./assets/images/hostels.png"
+                      alt="Хостелы"
+                      class="slider__image-link"
+                      itemprop="contentUrl"
+                    />
+                  </div>
+                  <div
+                    class="slider__text placement-options__slider-text"
+                    itemprop="caption"
+                  >
+                    Хостелы
+                  </div>
+                </div>
+                <div
+                  class="slider__item"
+                  itemprop="image"
+                  itemscope
+                  itemtype="http://schema.org/ImageObject"
+                >
+                  <div class="slider__image">
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="./assets/images/camp-sites.png"
+                      alt="Турбазы"
+                      class="slider__image-link"
+                      itemprop="contentUrl"
+                    />
+                  </div>
+                  <div
+                    class="slider__text placement-options__slider-text"
+                    itemprop="caption"
+                  >
+                    Турбазы
+                  </div>
+                </div>
+                <div
+                  class="slider__item"
+                  itemprop="image"
+                  itemscope
+                  itemtype="http://schema.org/ImageObject"
+                >
+                  <div class="slider__image">
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="./assets/images/camping.png"
+                      alt="Кемпинги"
+                      class="slider__image-link"
+                      itemprop="contentUrl"
+                    />
+                  </div>
+                  <div
+                    class="slider__text placement-options__slider-text"
+                    itemprop="caption"
+                  >
+                    Кемпинг
+                  </div>
+                </div>
+                <div
+                  class="slider__item"
+                  itemprop="image"
+                  itemscope
+                  itemtype="http://schema.org/ImageObject"
+                >
+                  <div class="slider__image">
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="./assets/images/sanatorium.png"
+                      alt="Санатории"
+                      class="slider__image-link"
+                      itemprop="contentUrl"
+                    />
+                  </div>
+                  <div
+                    class="slider__text placement-options__slider-text"
+                    itemprop="caption"
+                  >
+                    Санаторий
+                  </div>
+                </div>
+                <div
+                  class="slider__item"
+                  itemprop="image"
+                  itemscope
+                  itemtype="http://schema.org/ImageObject"
+                >
+                  <div class="slider__image">
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="./assets/images/guest-houses.png"
+                      alt="Гостевые дома"
+                      class="slider__image-link"
+                      itemprop="contentUrl"
+                    />
+                  </div>
+                  <div
+                    class="slider__text placement-options__slider-text"
+                    itemprop="caption"
+                  >
+                    Гостевые дома
+                  </div>
+                </div>
+                <div
+                  class="slider__item"
+                  itemprop="image"
+                  itemscope
+                  itemtype="http://schema.org/ImageObject"
+                >
+                  <div class="slider__image">
+                    <img
+                      decoding="async"
+                      loading="lazy"
+                      src="./assets/images/cottages.png"
+                      alt="Коттеджи"
+                      class="slider__image-link"
+                      itemprop="contentUrl"
+                    />
+                  </div>
+                  <div
+                    class="slider__text placement-options__slider-text"
+                    itemprop="caption"
+                  >
+                    Коттеджи
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="types-legal-entities" id="types-legal-entities">
+        <span class="mask--ellipse-top"></span>
+        <div class="types-legal-entities__wrapper">
+          <h2 class="h1 types-legal-entities__title">
+            Нужно быть юр. лицом или ИП?
+          </h2>
+          <aside class="types-legal-entities__promo">
+            <p class="h2 types-legal-entities__subtitle">
+              Без ограничений по форме регистрации!
+            </p>
+            <p class="types-legal-entities__description">
+              Зарегистрировать объект на наших площадках могут индивидуальные
+              предприниматели и юридические лица.
+            </p>
+          </aside>
+          <aside
+            class="types-legal-entities__choice-tariff choice-tariff"
+            data-radio-group="tariff"
+          >
+            <h4 class="h2 choice-tariff__title">Регистрация</h4>
+            <form class="choice-tariff__form">
+              <div class="radio">
+                <label class="radio__label">
+                  <input
+                    checked
+                    type="radio"
+                    name="options"
+                    class="radio__input"
+                    data-radio-option
+                    value="utm_campaign=%D0%BE%D0%B1%D1%89%D0%B8%D0%B9+%D1%82%D1%80%D0%B0%D1%84%D0%B8%D0%BA+%D1%8E%D1%80.+%D0%BB%D0%B8%D1%86%D0%BE&utm_content=%D1%8E%D1%80.+%D0%BB%D0%B8%D1%86%D0%BE"
+                  />
+                  <span class="radio__text">Юридическое лицо</span>
+                </label>
+              </div>
+              <div class="radio">
+                <label class="radio__label">
+                  <input
+                    type="radio"
+                    name="options"
+                    class="radio__input"
+                    data-radio-option
+                    value="utm_campaign=%D0%BE%D0%B1%D1%89%D0%B8%D0%B9+%D1%82%D1%80%D0%B0%D1%84%D0%B8%D0%BA+%D0%B8%D0%BF&utm_content=%D0%B8%D0%BF"
+                  />
+                  <span class="radio__text"
+                    >Индивидуальный предприниматель</span
+                  >
+                </label>
+              </div>
+            </form>
+            <button
+              type="button"
+              class="choice-tariff__button button button--primary pulse"
+              data-submit-button
+            >
+              <span class="button__text">Зарегистрироваться</span>
+            </button>
+          </aside>
+        </div>
+        <span class="mask--ellipse-bottom"></span>
+      </section>
+      <section id="reviews" class="reviews">
+        <h2 class="h1 reviews__title">Отельеры о нас</h2>
+        <p class="h2 reviews__subtitle">
+          Все честно: преимущества и недостатки
+        </p>
+        <div class="container">
+          <div
+            class="slider slider--reviews"
+            data-slider="slider"
+            data-loop="true"
+          >
+            <div class="slider__navigation">
+              <button class="button button--slider slider__button-prev">
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="./assets/images/icons/arrow-left.svg"
+                  alt=""
+                  class="button__icon"
+                />
+              </button>
+              <button class="button button--slider slider__button-next">
+                <img
+                  decoding="async"
+                  loading="lazy"
+                  src="./assets/images/icons/arrow-right.svg"
+                  alt=""
+                  class="button__icon"
+                />
+              </button>
+            </div>
+            <div
+              class="slider__wrapper"
+              itemscope
+              itemtype="http://schema.org/UserComments"
+            >
+              <div class="slider__items">
+                <div class="slider__item">
+                  <div class="reviews__content">
+                    <p class="reviews__text" itemprop="commentText">
+                      Сервис пользуется большой популярностью у пользователей:
+                      приложение удобное, быстрое, можно использовать Сплит,
+                      начисляются баллы за каждое бронирование. Благодаря этому
+                      количество бронирований от Алеан Экстранет у нас
+                      увеличилось, бренд стал более узнаваемым. Поддержка
+                      пользователей и самого отеля работает очень оперативно.
+                      Сервис пользуется большой популярностью у пользователей:
+                      приложение удобное, быстрое, можно использовать Сплит,
+                      начисляются баллы за каждое бронирование. Благодаря этому
+                      количество бронирований от Алеан Экстранет у нас
+                      увеличилось, бренд стал более узнаваемым. Поддержка
+                      пользователей и самого отеля работает очень оперативно.
+                    </p>
+                    <meta content="01-12-2024" itemprop="commentTime" />
+                    <span class="mask--divider"></span>
+                    <div class="reviews__author">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src="./assets/images/author-image2.jpeg"
+                        alt=""
+                        class="reviews__author-image"
+                      />
+                      <div
+                        class="reviews__author-text"
+                        itemprop="creator"
+                        itemscope=""
+                        itemtype="http://schema.org/Person"
+                      >
+                        <b class="reviews__author-name" itemprop="name">
+                          Дормидонт Аполинарьев
+                        </b>
+                        <span class="reviews__author-description">
+                          руководитель отдела продаж и маркетинга «Грацующий
+                          пони»
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="slider__item">
+                  <div class="reviews__content">
+                    <p class="reviews__text" itemprop="commentText">
+                      Сервис пользуется большой популярностью у пользователей:
+                      приложение удобное, быстрое, можно использовать Сплит,
+                      начисляются баллы за каждое бронирование. Благодаря этому
+                      количество бронирований от Алеан Экстранет у нас
+                      увеличилось, бренд стал более узнаваемым. Поддержка
+                      пользователей и самого отеля работает очень оперативно.
+                      Сервис пользуется большой популярностью у пользователей:
+                      приложение удобное, быстрое, можно использовать Сплит,
+                      начисляются баллы за каждое бронирование. Благодаря этому
+                      количество бронирований от Алеан Экстранет у нас
+                      увеличилось, бренд стал более узнаваемым. Поддержка
+                      пользователей и самого отеля работает очень оперативно.
+                    </p>
+                    <!-- <button id="openModal1" class="button button--reviews-video"> <img decoding="async" loading="lazy" src="./assets/images/icons/video-square.svg" alt="посмотреть видео-отзыв" class="button__icon"> <span class="button__text"> Видео-отзыв </span> </button> -->
+                    <meta content="01-12-2024" itemprop="commentTime" />
+                    <span class="mask--divider"></span>
+                    <div class="reviews__author">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src="./assets/images/author-image2.jpeg"
+                        alt=""
+                        class="reviews__author-image"
+                      />
+                      <div
+                        class="reviews__author-text"
+                        itemprop="creator"
+                        itemscope=""
+                        itemtype="http://schema.org/Person"
+                      >
+                        <b class="reviews__author-name" itemprop="name">
+                          Дормидонт Аполинарьев
+                        </b>
+                        <span class="reviews__author-description">
+                          руководитель отдела продаж и маркетинга «Грацующий
+                          пони»
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="slider__item">
+                  <div class="reviews__content">
+                    <p class="reviews__text" itemprop="commentText">
+                      Сервис пользуется большой популярностью у пользователей:
+                      приложение удобное, быстрое, можно использовать Сплит,
+                      начисляются баллы за каждое бронирование. Благодаря этому
+                      количество бронирований от Алеан Экстранет у нас
+                      увеличилось, бренд стал более узнаваемым. Поддержка
+                      пользователей и самого отеля работает очень оперативно.
+                      Сервис пользуется большой популярностью у пользователей:
+                      приложение удобное, быстрое, можно использовать Сплит,
+                      начисляются баллы за каждое бронирование. Благодаря этому
+                      количество бронирований от Алеан Экстранет у нас
+                      увеличилось, бренд стал более узнаваемым. Поддержка
+                      пользователей и самого отеля работает очень оперативно.
+                    </p>
+                    <meta content="01-12-2024" itemprop="commentTime" />
+                    <span class="mask--divider"></span>
+                    <div class="reviews__author">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src="./assets/images/author-image2.jpeg"
+                        alt=""
+                        class="reviews__author-image"
+                      />
+                      <div
+                        class="reviews__author-text"
+                        itemprop="creator"
+                        itemscope=""
+                        itemtype="http://schema.org/Person"
+                      >
+                        <b class="reviews__author-name" itemprop="name">
+                          Дормидонт Аполинарьев
+                        </b>
+                        <span class="reviews__author-description">
+                          руководитель отдела продаж и маркетинга «Грацующий
+                          пони»
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="slider__item">
+                  <div class="reviews__content">
+                    <p class="reviews__text" itemprop="commentText">
+                      Сервис пользуется большой популярностью у пользователей:
+                      приложение удобное, быстрое, можно использовать Сплит,
+                      начисляются баллы за каждое бронирование. Благодаря этому
+                      количество бронирований от Алеан Экстранет у нас
+                      увеличилось, бренд стал более узнаваемым. Поддержка
+                      пользователей и самого отеля работает очень оперативно.
+                      Сервис пользуется большой популярностью у пользователей:
+                      приложение удобное, быстрое, можно использовать Сплит,
+                      начисляются баллы за каждое бронирование. Благодаря этому
+                      количество бронирований от Алеан Экстранет у нас
+                      увеличилось, бренд стал более узнаваемым. Поддержка
+                      пользователей и самого отеля работает очень оперативно.
+                    </p>
+                    <meta content="01-12-2024" itemprop="commentTime" />
+                    <span class="mask--divider"></span>
+                    <div class="reviews__author">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src="./assets/images/author-image2.jpeg"
+                        alt=""
+                        class="reviews__author-image"
+                      />
+                      <div
+                        class="reviews__author-text"
+                        itemprop="creator"
+                        itemscope=""
+                        itemtype="http://schema.org/Person"
+                      >
+                        <b class="reviews__author-name" itemprop="name">
+                          Дормидонт Аполинарьев
+                        </b>
+                        <span class="reviews__author-description">
+                          руководитель отдела продаж и маркетинга «Грацующий
+                          пони»
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="slider__item">
+                  <div class="reviews__content">
+                    <p class="reviews__text" itemprop="commentText">
+                      Сервис пользуется большой популярностью у пользователей:
+                      приложение удобное, быстрое, можно использовать Сплит,
+                      начисляются баллы за каждое бронирование. Благодаря этому
+                      количество бронирований от Алеан Экстранет у нас
+                      увеличилось, бренд стал более узнаваемым. Поддержка
+                      пользователей и самого отеля работает очень оперативно.
+                      Сервис пользуется большой популярностью у пользователей:
+                      приложение удобное, быстрое, можно использовать Сплит,
+                      начисляются баллы за каждое бронирование. Благодаря этому
+                      количество бронирований от Алеан Экстранет у нас
+                      увеличилось, бренд стал более узнаваемым. Поддержка
+                      пользователей и самого отеля работает очень оперативно.
+                    </p>
+                    <meta content="01-12-2024" itemprop="commentTime" />
+                    <span class="mask--divider"></span>
+                    <div class="reviews__author">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src="./assets/images/author-image2.jpeg"
+                        alt=""
+                        class="reviews__author-image"
+                      />
+                      <div
+                        class="reviews__author-text"
+                        itemprop="creator"
+                        itemscope=""
+                        itemtype="http://schema.org/Person"
+                      >
+                        <b class="reviews__author-name" itemprop="name">
+                          Дормидонт Аполинарьев
+                        </b>
+                        <span class="reviews__author-description">
+                          руководитель отдела продаж и маркетинга «Грацующий
+                          пони»
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="slider__item">
+                  <div class="reviews__content">
+                    <p class="reviews__text" itemprop="commentText">
+                      Сервис пользуется большой популярностью у пользователей:
+                      приложение удобное, быстрое, можно использовать Сплит,
+                      начисляются баллы за каждое бронирование. Благодаря этому
+                      количество бронирований от Алеан Экстранет у нас
+                      увеличилось, бренд стал более узнаваемым. Поддержка
+                      пользователей и самого отеля работает очень оперативно.
+                      Сервис пользуется большой популярностью у пользователей:
+                      приложение удобное, быстрое, можно использовать Сплит,
+                      начисляются баллы за каждое бронирование. Благодаря этому
+                      количество бронирований от Алеан Экстранет у нас
+                      увеличилось, бренд стал более узнаваемым. Поддержка
+                      пользователей и самого отеля работает очень оперативно.
+                    </p>
+                    <meta content="01-12-2024" itemprop="commentTime" />
+                    <span class="mask--divider"></span>
+                    <div class="reviews__author">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src="./assets/images/author-image2.jpeg"
+                        alt=""
+                        class="reviews__author-image"
+                      />
+                      <div
+                        class="reviews__author-text"
+                        itemprop="creator"
+                        itemscope=""
+                        itemtype="http://schema.org/Person"
+                      >
+                        <b class="reviews__author-name" itemprop="name">
+                          Дормидонт Аполинарьев
+                        </b>
+                        <span class="reviews__author-description">
+                          руководитель отдела продаж и маркетинга «Грацующий
+                          пони»
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="slider__item">
+                  <div class="reviews__content">
+                    <p class="reviews__text" itemprop="commentText">
+                      Сервис пользуется большой популярностью у пользователей:
+                      приложение удобное, быстрое, можно использовать Сплит,
+                      начисляются баллы за каждое бронирование. Благодаря этому
+                      количество бронирований от Алеан Экстранет у нас
+                      увеличилось, бренд стал более узнаваемым. Поддержка
+                      пользователей и самого отеля работает очень оперативно.
+                      Сервис пользуется большой популярностью у пользователей:
+                      приложение удобное, быстрое, можно использовать Сплит,
+                      начисляются баллы за каждое бронирование. Благодаря этому
+                      количество бронирований от Алеан Экстранет у нас
+                      увеличилось, бренд стал более узнаваемым. Поддержка
+                      пользователей и самого отеля работает очень оперативно.
+                    </p>
+                    <meta content="01-12-2024" itemprop="commentTime" />
+                    <span class="mask--divider"></span>
+                    <div class="reviews__author">
+                      <img
+                        decoding="async"
+                        loading="lazy"
+                        src="./assets/images/author-image2.jpeg"
+                        alt=""
+                        class="reviews__author-image"
+                      />
+                      <div
+                        class="reviews__author-text"
+                        itemprop="creator"
+                        itemscope=""
+                        itemtype="http://schema.org/Person"
+                      >
+                        <b class="reviews__author-name" itemprop="name">
+                          Дормидонт Аполинарьев
+                        </b>
+                        <span class="reviews__author-description">
+                          руководитель отдела продаж и маркетинга «Грацующий
+                          пони»
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div id="modal1" class="modal"> <div class="modal__wrapper"> <button class="modal__button-close"></button> <div class="modal__content"> <div class="video-player"> <video class="video-player__video" loop muted poster="./assets/video/poster.jpg"> <source class="video-player__source" src="./assets/video/video.mp4" type="video/mp4"> </video> </div> </div> </div> </div> -->
+      </section>
+      <section id="questions" class="questions">
+        <h3 class="h1 questions__title">Несколько уточнений</h3>
+        <div
+          id="accordion"
+          class="questions__accordion accordion"
+          itemscope
+          itemtype="https://schema.org/FAQPage"
+        >
+          <div
+            class="accordion__item"
+            itemprop="mainEntity"
+            itemscope
+            itemtype="https://schema.org/Question"
+          >
+            <div class="accordion__wrapper">
+              <div class="accordion__header" itemprop="name">
+                Как зарегистрироваться и открыть продажи?
+              </div>
+              <div
+                class="accordion__body"
+                itemscope
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div class="accordion__content" itemprop="text">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Minima aliquid veritatis quod architecto doloribus fuga dolor
+                  aperiam culpa, officiis blanditiis laborum consequuntur,
+                  temporibus id sapiente? Aspernatur delectus praesentium
+                  asperiores facilis.
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="accordion__divider" />
+          <div
+            class="accordion__item"
+            itemprop="mainEntity"
+            itemscope
+            itemtype="https://schema.org/Question"
+          >
+            <div class="accordion__wrapper">
+              <div class="accordion__header" itemprop="name">
+                Как происходят выплаты?
+              </div>
+              <div
+                class="accordion__body"
+                itemscope
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div class="accordion__content" itemprop="text">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Minima aliquid veritatis quod architecto doloribus fuga dolor
+                  aperiam culpa, officiis blanditiis laborum consequuntur,
+                  temporibus id sapiente? Aspernatur delectus praesentium
+                  asperiores facilis.
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="accordion__divider" />
+          <div
+            class="accordion__item"
+            itemprop="mainEntity"
+            itemscope
+            itemtype="https://schema.org/Question"
+          >
+            <div class="accordion__wrapper">
+              <div class="accordion__header" itemprop="name">
+                Как получать предоплату от гостей?
+              </div>
+              <div
+                class="accordion__body"
+                itemscope
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div class="accordion__content" itemprop="text">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Minima aliquid veritatis quod architecto doloribus fuga dolor
+                  aperiam culpa, officiis blanditiis laborum consequuntur,
+                  temporibus id sapiente? Aspernatur delectus praesentium
+                  asperiores facilis.
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="accordion__divider" />
+          <div
+            class="accordion__item"
+            itemprop="mainEntity"
+            itemscope
+            itemtype="https://schema.org/Question"
+          >
+            <div class="accordion__wrapper">
+              <div class="accordion__header" itemprop="name">
+                Как связаться с гостями?
+              </div>
+              <div
+                class="accordion__body"
+                itemscope
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div class="accordion__content" itemprop="text">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Minima aliquid veritatis quod architecto doloribus fuga dolor
+                  aperiam culpa, officiis blanditiis laborum consequuntur,
+                  temporibus id sapiente? Aspernatur delectus praesentium
+                  asperiores facilis.
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="accordion__divider" />
+          <div
+            class="accordion__item"
+            itemprop="mainEntity"
+            itemscope
+            itemtype="https://schema.org/Question"
+          >
+            <div class="accordion__wrapper">
+              <div class="accordion__header" itemprop="name">
+                Как получать уведомления о бронированиях?
+              </div>
+              <div
+                class="accordion__body"
+                itemscope
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div class="accordion__content" itemprop="text">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Minima aliquid veritatis quod architecto doloribus fuga dolor
+                  aperiam culpa, officiis blanditiis laborum consequuntur,
+                  temporibus id sapiente? Aspernatur delectus praesentium
+                  asperiores facilis.
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="accordion__divider" />
+          <div
+            class="accordion__item"
+            itemprop="mainEntity"
+            itemscope
+            itemtype="https://schema.org/Question"
+          >
+            <div class="accordion__wrapper">
+              <div class="accordion__header" itemprop="name">
+                Как зарегистрироваться и открыть продажи? Как связаться со
+                службой поддержки?
+              </div>
+              <div
+                class="accordion__body"
+                itemscope
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <div class="accordion__content" itemprop="text">
+                  Lorem ipsum dolor sit amet conazsectetur, adipisicing elit.
+                  Minima aliquid veritatis quod architecto doloribus fuga dolor
+                  aperiam culpa, officiis blanditiis laborum consequuntur,
+                  temporibus id sapiente? Aspernatur delectus praesentium
+                  asperiores facilis.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside class="questions__additional-information additional-information">
+          <div class="additional-information__text">
+            <span class="additional-information__target-text"
+              >Остались вопросы? </span
+            ><span>Задайте их в Телеграм</span>
+          </div>
+          <!-- noindex -->
+          <a
+            href="https://t.me/aleanhotels"
+            class="questions__button button button--primary"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
+            <img
+              decoding="async"
+              loading="lazy"
+              src="./assets/images/icons/telegram.svg"
+              alt=""
+              class="button__icon animated slideFade"
+            />
+            <span class="button__text"> Перейти в Телеграм </span>
+          </a>
+          <!-- /noindex -->
+        </aside>
+      </section>
+    </main>
+    <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+      <span class="mask--ellipse-top"></span>
+      <div class="footer__promo">
+        <div class="h2 footer__title">
+          Закрытая группа в телеграме для отельеров
+        </div>
+        <div class="footer__description">
+          Можете задать вопрос и быстро получить ответ.<br />
+          А также общаться с другими отельерами.
+        </div>
+        <a
+          href="https://t.me/aleanhotels"
+          class="footer__button button button--primary"
+          target="_blank"
+          rel="nofollow noopener noreferrer"
+        >
+          <img
+            decoding="async"
+            loading="lazy"
+            src="./assets/images/icons/telegram.svg"
+            alt=""
+            class="button__icon animated slideFade"
+          />
+          <span class="button__text"> Перейти в Телеграм </span>
+        </a>
+        <!-- /noindex -->
+      </div>
+      <aside class="footer__menu-container">
+        <!-- noindex -->
+        <a
+          href="https://www.alean.ru/"
+          class="footer__logo logo"
+          itemscope
+          itemtype="http://schema.org/ImageObject"
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            decoding="async"
+            loading="lazy"
+            src="./assets/images/logos/alean.svg"
+            class="logo__image"
+            alt="Национальный туроператор Алеан"
+            itemprop="contentUrl"
+          />
+          <meta
+            content="Логотип национального туроператора Алеан"
+            itemprop="name"
+          />
+          <meta
+            content="Экстранет Алеан - Продать номер стало еще проще. В ТОПе OTA продаж"
+            itemprop="description"
+          />
+        </a>
+        <!-- /noindex -->
+        <div class="footer__menu menu">
+          <nav class="menu__body">
+            <ul
+              class="menu__list"
+              itemscope
+              itemtype="http://www.schema.org/SiteNavigationElement"
+            >
+              <li class="menu__item" itemprop="name">
+                <a href="#partners" class="menu__link" itemprop="url"
+                  >Партнеры</a
+                >
+              </li>
+              <li class="menu__item" itemprop="name">
+                <a href="#advantages" class="menu__link" itemprop="url"
+                  >Преимущества</a
+                >
+              </li>
+              <li class="menu__item" itemprop="name">
+                <a
+                  href="#types-legal-entities"
+                  class="menu__link"
+                  itemprop="url"
+                  >Виды ЮЛ</a
+                >
+              </li>
+              <li class="menu__item" itemprop="name">
+                <a href="#reviews" class="menu__link" itemprop="url">Отзывы</a>
+              </li>
+              <li class="menu__item" itemprop="name">
+                <a href="#questions" class="menu__link" itemprop="url"
+                  >Вопросы</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+      <meta content="2025" itemprop="copyrightYear" />
+      <meta content="ООО Алеан" itemprop="creator" />
+      <div
+        itemscope
+        itemtype="http://schema.org/Organization"
+        style="display: none"
+      >
+        <meta itemprop="name" content="ООО Алеан" />
+        <meta itemprop="url" content="https://extranet.alean.ru" />
+        <meta
+          itemprop="logo"
+          content="https://extranet.alean.r/images/logos/alean.svg"
+        />
+        <meta itemprop="telephone" content="+7 (495) 2-300-300" />
+        <meta itemprop="email" content="extranet@alean.ru" />
+        <div
+          itemprop="address"
+          itemscope
+          itemtype="http://schema.org/PostalAddress"
+        >
+          <meta itemprop="streetAddress" content="Верхняя Масловка, 20, с3" />
+          <meta itemprop="addressLocality" content="Москва" />
+          <meta itemprop="addressRegion" content="Московская область" />
+          <meta itemprop="postalCode" content="127083" />
+          <meta itemprop="addressCountry" content="RU" />
+        </div>
+        <div itemscope itemtype="http://schema.org/ProfessionalService">
+          <meta itemprop="name" content="Экстранет Алеан" />
+          <meta
+            itemprop="description"
+            content="Добавьте свой отель на Alean и привлеките больше туристов! Вы будете на сайте, в сети турагентств и корпоративных гостей."
+          />
+          <div
+            itemprop="address"
+            itemscope
+            itemtype="http://schema.org/PostalAddress"
+          >
+            <meta itemprop="streetAddress" content="Верхняя Масловка, 20, с3" />
+            <meta itemprop="addressLocality" content="Москва" />
+            <meta itemprop="addressRegion" content="Московская область" />
+            <meta itemprop="postalCode" content="127083" />
+            <meta itemprop="addressCountry" content="RU" />
+          </div>
+          <meta itemprop="telephone" content="+7 (495) 2-300-300" />
+        </div>
+      </div>
+    </footer>
+    <script src="./assets/js/scroll.js"></script>
+
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/slider.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Экстранет Алеан",
+        "description": "Добавьте свой отель на Alean и привлеките больше туристов! Вы будете на сайте, в сети турагентств и корпоративных гостей.",
+        "serviceType": "LegalService",
+        "provider": {
+          "@type": "Organization",
+          "name": "Алеан",
+          "url": "https://extranet.alean.ru",
+          "logo": "https://extranet.alean.ru/assets/images/logos/alean.svg",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Верхняя Масловка, 20",
+            "addressLocality": "Москва",
+            "postalCode": "127083",
+            "addressCountry": "RU"
+          }
+        },
+        "areaServed": {
+          "@type": "AdministrativeArea",
+          "name": "Москва и Московская область"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "от 15000 руб.",
+          "priceCurrency": "RUB",
+          "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "ratingCount": "87",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "image": [
+          "https://extranet.alean.ru/assets/images/banner__promo.png",
+          "https://extranet.alean.ru/assets/images/banner__promo.png"
+        ]
+      }
     </script>
-
-</body>
-
+  </body>
 </html>
