@@ -651,7 +651,7 @@
 
   .slider[data-scale='true'] .slider__item:first-child.slider__item--active {
     margin-right: calc(var(--gap-items) * 1.1);
-    transition: var(--animation-speed);
+    transition: all var(--animation-speed);
   }
 
   .slider[data-scale='true'] .slider-item {
@@ -1798,6 +1798,7 @@
     .advantages__count-members {
       flex: 0 0 100%;
     }
+
     .accordion__item:not(.accordion__item_show) .accordion__wrapper {
       padding-bottom: 16px;
     }
