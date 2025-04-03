@@ -617,6 +617,7 @@
     position: relative;
     user-select: none;
     will-change: transform;
+    backface-visibility: hidden;
     /* transition: var(--animation-speed); */
     transform-origin: center center;
     display: flex;

@@ -741,6 +741,7 @@
     -ms-user-select: none;
     user-select: none;
     will-change: transform;
+    backface-visibility: hidden;
     /* -webkit-transition: var(--animation-speed);
     -o-transition: var(--animation-speed);
     transition: var(--animation-speed); */
