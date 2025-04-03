@@ -379,5 +379,5 @@ console.log(
   ║██████╗ ██╔╝ ██╗    ██║    ██║  ██║ ██║  ██║ ██║ ╚████║ ║██████╗    ██║   
   ╚══════╝ ╚═╝  ╚═╝    ╚═╝    ╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚═╝  ╚═══╝ ╚══════╝    ╚═╝   
   `,
-  "color: s#131316; font-family: monospace; line-height: 1.3;"
+  "color: s#131316; font-family: monospace; line-height: 1;"
   );
