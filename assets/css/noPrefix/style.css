@@ -651,6 +651,7 @@
 
   .slider[data-scale='true'] .slider__item:first-child.slider__item--active {
     margin-right: calc(var(--gap-items) * 1.1);
+    transition: var(--animation-speed);
   }
 
   .slider[data-scale='true'] .slider-item {

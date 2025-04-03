@@ -741,9 +741,9 @@
     -ms-user-select: none;
     user-select: none;
     will-change: transform;
-    -webkit-transition: var(--animation-speed);
+    /* -webkit-transition: var(--animation-speed);
     -o-transition: var(--animation-speed);
-    transition: var(--animation-speed);
+    transition: var(--animation-speed); */
     -webkit-transform-origin: center center;
     -ms-transform-origin: center center;
     transform-origin: center center;
@@ -788,6 +788,9 @@
 
   .slider[data-scale='true'] .slider__item:first-child.slider__item--active {
     margin-right: calc(var(--gap-items) * 1.1);
+    -webkit-transition: var(--animation-speed);
+    -o-transition: var(--animation-speed);
+    transition: var(--animation-speed);
   }
 
   .slider[data-scale='true'] .slider-item {
