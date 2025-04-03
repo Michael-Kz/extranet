@@ -384,6 +384,7 @@ class Slider {
             const elState = this.#state.els.find(el => el.el === item)
             const currentTranslate = elState ? elState.translate : 0
 item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px)`
+item.style.transition = `all var(--animation-speed, 0.3s)`;
             // item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px) scale(1.1)`
           }
         }
@@ -393,6 +394,7 @@ item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px)`
             const elState = this.#state.els.find(el => el.el === item)
             const currentTranslate = elState ? elState.translate : 0
             item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px)`
+            item.style.transition = `all var(--animation-speed, 0.3s)`;
           }
         }
 
