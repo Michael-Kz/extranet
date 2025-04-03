@@ -33,6 +33,8 @@ Disallow: /*.aspx$
 Disallow: *.pdf
 Disallow: /*.doc$
 Disallow: /*.docx$
+Disallow: /*.ini$
+Disallow: /*.env$
 Allow: /*.jpg$
 Allow: /*.jpeg$
 Allow: /*.png$
@@ -88,6 +90,8 @@ Disallow: /*.aspx$
 Disallow: *.pdf
 Disallow: /*.doc$
 Disallow: /*.docx$
+Disallow: /*.ini$
+Disallow: /*.env$
 Allow: /*.jpg$
 Allow: /*.jpeg$
 Allow: /*.png$
