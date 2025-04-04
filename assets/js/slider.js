@@ -502,49 +502,45 @@ item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px)`
     }
   }
 
-  #balanceItems(once = false) {
-    if (!this.#state.isBalancing && !once) return;
-  
-
-    const wrapperRect = this.#state.elWrapper.getBoundingClientRect();
-    const exItemMinRect = this.#state.exItemMin.getBoundingClientRect();
-    const exItemMaxRect = this.#state.exItemMax.getBoundingClientRect();
-    const targetWidth = wrapperRect.width / this.#state.countActiveItems / 2;
-    const countItems = this.#state.elListItem.length;
-  
-  
-    let itemToUpdate = null;
-    let newTranslate = 0;
-    let hasChanges = false;
-  
+  #balanceItems (once = false) {
+    if (!this.#state.isBalancing && !once) {
+      return
+    }
+    const wrapperRect = this.#state.elWrapper.getBoundingClientRect()
+    const targetWidth = wrapperRect.width / this.#state.countActiveItems / 2
+    const countItems = this.#state.elListItem.length
     if (this.#state.direction === 'next') {
-      if (exItemMinRect.right < wrapperRect.left - targetWidth) {
-        const elFound = this.#state.els.find(item => item.el === this.#state.exItemMin);
-        elFound.order = this.#state.exOrderMin + countItems;
-        newTranslate = elFound.translate = this.#state.exTranslateMin + countItems * this.#state.width;
-        itemToUpdate = this.#state.exItemMin;
-        hasChanges = true;
+      const exItemRectRight =
+        this.#state.exItemMin.getBoundingClientRect().right
+      if (exItemRectRight < wrapperRect.left - targetWidth) {
+        const elFound = this.#state.els.find(
+          item => item.el === this.#state.exItemMin
+        )
+        elFound.order = this.#state.exOrderMin + countItems
+        const translate =
+          this.#state.exTranslateMin + countItems * this.#state.width
+        elFound.translate = translate
+        this.#state.exItemMin.style.transform = `translate3D(${translate}px, 0px, 0.1px)`
+        this.#updateExProperties()
       }
     } else {
-      if (exItemMaxRect.left > wrapperRect.right + targetWidth) {
-        const elFound = this.#state.els.find(item => item.el === this.#state.exItemMax);
-        elFound.order = this.#state.exOrderMax - countItems;
-        newTranslate = elFound.translate = this.#state.exTranslateMax - countItems * this.#state.width;
-        itemToUpdate = this.#state.exItemMax;
-        hasChanges = true;
+      const exItemRectLeft = this.#state.exItemMax.getBoundingClientRect().left
+      if (exItemRectLeft > wrapperRect.right + targetWidth) {
+        const elFound = this.#state.els.find(
+          item => item.el === this.#state.exItemMax
+        )
+        elFound.order = this.#state.exOrderMax - countItems
+        const translate =
+          this.#state.exTranslateMax - countItems * this.#state.width
+        elFound.translate = translate
+        this.#state.exItemMax.style.transform = `translate3D(${translate}px, 0px, 0.1px)`
+        this.#updateExProperties()
       }
     }
-  
-    
-    if (itemToUpdate) {
-      itemToUpdate.style.transform = `translate3D(${newTranslate}px, 0px, 0.1px)`;
-      this.#updateExProperties();
-    }
-  
-    if (!once && hasChanges && this.#state.isBalancing) {
+    if (!once) {
       window.requestAnimationFrame(() => {
-        this.#balanceItems(false);
-      });
+        this.#balanceItems(false)
+      })
     }
   }
 
