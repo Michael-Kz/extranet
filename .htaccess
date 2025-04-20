@@ -18,8 +18,8 @@ ServerSignature Off
 
   ### Перенаправление на HTTPS + удаление www
   RewriteCond %{HTTPS} off [OR]
-  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301,NE]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^ https://170100.ru%{REQUEST_URI} [L,R=301,NE]
 
   ### Удаление index.html из URL
   RewriteCond %{THE_REQUEST} \s/index\.html [NC]
@@ -137,7 +137,7 @@ ErrorDocument 403 /.system-pages/403/index.html
 ErrorDocument 404 /.system-pages/404/index.html
 ErrorDocument 500 /.system-pages/500/index.html
 ErrorDocument 502 /.system-pages/502/index.html
-ErrorDocument 503 /.system-pages/503/index.html
+ErrorDocument 503 /.system-pages/offline/index.html
 
 ### Запрет доступа к системным файлам
 <FilesMatch "^\..*|\.(env|htaccess|htpasswd|ini|log|sh|sql)$">

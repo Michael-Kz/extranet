@@ -47,6 +47,7 @@ Disallow: /*js*
 Disallow: /css*
 Disallow: /js*
 Disallow: /.system-pages/
+Disallow: /offline/
 Sitemap: https://extranet.alean.ru/sitemap.xml
 
 User-agent: Yandex
@@ -95,4 +96,5 @@ Disallow: /*js*
 Disallow: /css*
 Disallow: /js*
 Disallow: /.system-pages/
+Disallow: /offline/
 Sitemap: https://extranet.alean.ru/sitemap.xml
