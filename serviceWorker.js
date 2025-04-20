@@ -1,7 +1,7 @@
 'use strict';
 
 const CACHE_NAME = 'offline-cache-v3'; // Увеличили версию кэша
-const OFFLINE_URL = '/offline/index.html';
+const OFFLINE_URL = '/.offline/index.html';
 const OFFLINE_RESOURCES = [
   OFFLINE_URL,
   '/assets/css/style.css',
