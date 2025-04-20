@@ -30,7 +30,7 @@ Disallow: /*.md$
 Disallow: /*.db$
 Disallow: /*.txt$
 Disallow: /*.aspx$
-Disallow: *.pdf
+Disallow: /*.pdf$
 Disallow: /*.doc$
 Disallow: /*.docx$
 Disallow: /*.ini$
@@ -52,17 +52,7 @@ Sitemap: https://extranet.alean.ru/sitemap.xml
 User-agent: Yandex
 Allow: /
 Clean-param: utm
-Clean-param: utm_ya_campaign&yabizcmpgn&utm_candidate&etext&utm_banner_type&utm_referer
-Clean-param: yclid
-Clean-param: ysclid
-Clean-param: openstat
-Clean-param: utm
-Clean-param: y_ref
-Clean-param: etext
-Clean-param: yllcd
-Clean-param: ylcd
-Clean-param: erid
-Clean-param: id
+Clean-param: utm_ya_campaign&yabizcmpgn&utm_candidate&etext&utm_banner_type&utm_referer&yclid&ysclid&openstat&utm&y_ref&yllcd&ylcd&erid&idClean-param: yclid
 Disallow: /*.twig$
 Disallow: /*.html$
 Disallow: /*.php$
@@ -87,7 +77,7 @@ Disallow: /*.md$
 Disallow: /*.db$
 Disallow: /*.txt$
 Disallow: /*.aspx$
-Disallow: *.pdf
+Disallow: /*.pdf$
 Disallow: /*.doc$
 Disallow: /*.docx$
 Disallow: /*.ini$

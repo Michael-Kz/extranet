@@ -1,38 +1,35 @@
 'use strict';
 
-const CACHE_NAME = 'offline-cache';
-const OFFLINE_PAGE = '/.system-pages/offline/index.html'; // Путь к оффлайн-странице
+const CACHE_NAME = 'offline-cache-v1';
+const OFFLINE_URL = '/.system-pages/offline/index.html';
 
-// Установка Service Worker
-self.addEventListener('install', (event) => {
+self.addEventListener('install', event => {
     event.waitUntil(
-        caches.open(CACHE_NAME).then((cache) => {
-            return cache.add(OFFLINE_PAGE); // Кэшируем оффлайн-страницу
+        caches.open(CACHE_NAME).then(cache => {
+            return cache.addAll([OFFLINE_URL]);
         })
     );
 });
 
-// Активация Service Worker
-self.addEventListener('activate', (event) => {
-    event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
-                cacheNames.map((cache) => {
-                    if (cache !== CACHE_NAME) {
-                        return caches.delete(cache); // Удаляем старые кэши
-                    }
-                })
-            );
-        })
-    );
+self.addEventListener('fetch', event => {
+    if (event.request.mode === 'navigate') {
+        event.respondWith(
+            fetch(event.request).catch(() => {
+                return caches.match(OFFLINE_URL);
+            })
+        );
+    }
 });
 
-// Перехват сетевых запросов
-self.addEventListener('fetch', (event) => {
-    event.respondWith(
-        fetch(event.request).catch(() => {
-            // Если сеть недоступна, возвращаем оффлайн-страницу
-            return caches.match(OFFLINE_PAGE);
+self.addEventListener('activate', event => {
+    const cacheWhitelist = [CACHE_NAME];
+    event.waitUntil(
+        caches.keys().then(keyList => {
+            return Promise.all(keyList.map(key => {
+                if (!cacheWhitelist.includes(key)) {
+                    return caches.delete(key);
+                }
+            }));
         })
     );
 });

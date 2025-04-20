@@ -3,5 +3,8 @@
 		<loc>
 			https://extranet.alean.ru
 		</loc>
+		<priority>
+			1.0
+		</priority>
 	</url>
 </urlset>
