@@ -1,54 +1,74 @@
-### Включение механизма переписывания URL
-RewriteEngine On
+### Настройки сервера
+AddDefaultCharset UTF-8
+Options -Indexes -MultiViews +FollowSymLinks
+ServerSignature Off
 
-### Перенаправление на HTTPS (универсальное для любого домена)
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+### Запрет прямого доступа к страницам ошибок (но разрешаем через ErrorDocument)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Проверяем, что это не внутреннее перенаправление Apache
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  # Запрещаем прямой доступ к страницам ошибок
+  RewriteRule ^\.system-pages/(400|401|403|404|500|502|offline)/index\.html$ - [F,L]
+</IfModule>
 
-### Удаление www (опционально, если хотите использовать домен без www)
-RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+### Основные правила перезаписи URL
+<IfModule mod_rewrite.c>
+  RewriteEngine On
 
-### Удаление index.html из URL
-DirectoryIndex index.html
-RewriteCond %{THE_REQUEST} \s/index\.html [NC]
-RewriteRule ^(.*?)index\.html$ /$1 [L,R=301,NC]
+  ### Перенаправление на HTTPS + удаление www
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301,NE]
 
-### Запрет доступа к index.html напрямую
-RewriteCond %{THE_REQUEST} \s(.*?)/index\.html [NC]
-RewriteRule ^(.*?)/index\.html$ /$1 [L,R=301,NC]
+  ### Удаление index.html из URL
+  RewriteCond %{THE_REQUEST} \s/index\.html [NC]
+  RewriteRule ^(.*?)index\.html$ /$1 [L,R=301,NC]
 
-#Редирект с множественных слешей
-RewriteCond %{THE_REQUEST} ^(?:GET|POST)\ //+([^\ ]*)
-RewriteRule .* https://%{HTTP_HOST}/%1 [R=301,L]
-RewriteCond %{REQUEST_URI} ^(.*)//(.*)$
-RewriteRule . %1/%2 [R,L]
+  ### Запрет доступа к index.html напрямую
+  RewriteCond %{THE_REQUEST} \s(.*?)/index\.html [NC]
+  RewriteRule ^(.*?)/index\.html$ /$1 [L,R=301,NC]
 
-# Убрать /? из дублей
-RewriteCond %{THE_REQUEST} ^[^\s]+\s+[^?]*?\?
-RewriteCond %{QUERY_STRING} ^$
-RewriteRule .? %{REQUEST_URI}? [R=301,L]
+  ### Обработка множественных слешей
+  RewriteCond %{THE_REQUEST} ^(?:GET|POST)\ //+([^\ ]*)
+  RewriteRule .* https://%{HTTP_HOST}/%1 [R=301,L]
+  RewriteCond %{REQUEST_URI} ^(.*)//(.*)$
+  RewriteRule . %1/%2 [R,L]
 
-#Слэш в конце URL
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_URI} !(.*)/$
-RewriteRule ^(.*[^/])$ $1/ [L,R=301]
+  ### Удаление пустых query-параметров
+  RewriteCond %{THE_REQUEST} ^[^\s]+\s+[^?]*?\?
+  RewriteCond %{QUERY_STRING} ^$
+  RewriteRule .? %{REQUEST_URI}? [R=301,L]
 
-### MIME-типы для графических форматов
-AddType image/jpeg .jpg .jpeg .jpe
-AddType image/png .png
-AddType image/gif .gif
-AddType image/webp .webp
-AddType image/svg+xml .svg .svgz
-AddType image/bmp .bmp
-AddType image/tiff .tif .tiff
-AddType image/x-icon .ico
-AddType image/apng .apng
-AddType image/heif .heif .heic
-AddType image/avif .avif
-AddEncoding gzip .svgz
+  ### Добавление слеша в конце URL для директорий
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !(\.\w+$|/|offline/index\.html$)
+  RewriteRule [^/]$ %{REQUEST_URI}/ [R=301,L]
+</IfModule>
 
-### Кэширование статических файлов
+### MIME-типы
+<IfModule mod_mime.c>
+  AddType image/jpeg .jpg .jpeg .jpe
+  AddType image/png .png
+  AddType image/gif .gif
+  AddType image/webp .webp
+  AddType image/svg+xml .svg .svgz
+  AddType image/bmp .bmp
+  AddType image/tiff .tif .tiff
+  AddType image/x-icon .ico
+  AddType image/apng .apng
+  AddType image/heif .heif .heic
+  AddType image/avif .avif
+  AddEncoding gzip .svgz
+  
+  AddType application/javascript js
+  AddType text/css css
+  AddType font/ttf ttf
+  AddType font/woff woff
+  AddType font/woff2 woff2
+</IfModule>
+
+### Кэширование
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/jpg "access 1 year"
@@ -63,16 +83,17 @@ AddEncoding gzip .svgz
   ExpiresByType image/apng "access 1 year"
   ExpiresByType image/heif "access 1 year"
   ExpiresByType image/avif "access 1 year"
-  ExpiresByType text/css "access 1 month"
-  ExpiresByType application/javascript "access 1 month"
+  ExpiresByType text/css "access 1 year"
+  ExpiresByType application/javascript "access 1 year"
   ExpiresByType application/pdf "access 1 month"
   ExpiresByType font/ttf "access 1 year"
   ExpiresByType font/woff "access 1 year"
   ExpiresByType font/woff2 "access 1 year"
+  ExpiresByType text/html "access 1 hour"
   ExpiresDefault "access 2 days"
 </IfModule>
 
-### Сжатие данных
+### Сжатие
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE \
     text/html \
@@ -91,7 +112,6 @@ AddEncoding gzip .svgz
 
 ### Заголовки безопасности
 <IfModule mod_headers.c>
-  # Базовые заголовки безопасности
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-XSS-Protection "1; mode=block"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
@@ -99,9 +119,14 @@ AddEncoding gzip .svgz
   Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
   Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
 
-  # Кэширование для статических файлов
   <FilesMatch "\.(ico|jpg|jpeg|png|gif|webp|bmp|tiff|svg|apng|heif|heic|avif|css|js|woff|woff2|ttf)$">
     Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+
+  <FilesMatch "serviceWorker\.js$">
+    Header set Service-Worker-Allowed "/"
+    Header set Access-Control-Allow-Origin "*"
+    Header set Cache-Control "no-cache, must-revalidate"
   </FilesMatch>
 </IfModule>
 
@@ -114,31 +139,15 @@ ErrorDocument 500 /.system-pages/500/index.html
 ErrorDocument 502 /.system-pages/502/index.html
 ErrorDocument 503 /.system-pages/503/index.html
 
-### Запрет доступа к папке .system-pages и ее содержимому
-#RewriteRule ^\.system-pages - [F,NC]
-
-### Запрет доступа к скрытым файлам и папкам
-<FilesMatch "^\.">
-  Order allow,deny
-  Deny from all
+### Запрет доступа к системным файлам
+<FilesMatch "^\..*|\.(env|htaccess|htpasswd|ini|log|sh|sql)$">
+  Require all denied
 </FilesMatch>
 
-### Запрет доступа к чувствительным файлам
-<FilesMatch "\.(env|htaccess|htpasswd|ini|log|sh|sql)$">
-  Order allow,deny
-  Deny from all
+### Разрешаем доступ к оффлайн-странице
+<FilesMatch "offline/index\.html$">
+  Require all granted
 </FilesMatch>
 
-### Установка кодировки по умолчанию
-AddDefaultCharset UTF-8
-
-### Отключение directory listing
-Options -Indexes
-
-### Сжатие через PHP (если используется mod_php)
-<IfModule mod_php7.c>
-  php_value zlib.output_compression 16386
-</IfModule>
-
-# Установка переменной окружения SERVER_ADMIN
+### Установка переменной окружения
 SetEnv SERVER_ADMIN info@alean.ru
