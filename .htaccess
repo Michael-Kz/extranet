@@ -1,33 +1,34 @@
-### Настройки сервера
 AddDefaultCharset UTF-8
 Options -Indexes -MultiViews +FollowSymLinks
 ServerSignature Off
 
-### Запрет прямого доступа к страницам ошибок (но разрешаем через ErrorDocument)
+### Блокировка прямого доступа к служебным файлам
+<FilesMatch "^\..*|\.(env|htaccess|htpasswd|ini|log|sh|sql|conf)$">
+  Require all denied
+</FilesMatch>
+
+### Разрешение доступа к оффлайн-странице
+<FilesMatch "^offline/index\.html$">
+  Require all granted
+  Header set Cache-Control "no-cache"
+</FilesMatch>
+
+### Настройки mod_rewrite
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  # Проверяем, что это не внутреннее перенаправление Apache
-  RewriteCond %{ENV:REDIRECT_STATUS} ^$
-  # Запрещаем прямой доступ к страницам ошибок
-  RewriteRule ^\.system-pages/(400|401|403|404|500|502|offline)/index\.html$ - [F,L]
-</IfModule>
 
-### Основные правила перезаписи URL
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-
-  ### Перенаправление на HTTPS + удаление www
+  ### HTTPS + удаление www
   RewriteCond %{HTTPS} off [OR]
   RewriteCond %{HTTP_HOST} ^www\. [NC]
   RewriteRule ^ https://170100.ru%{REQUEST_URI} [L,R=301,NE]
 
+  ### Блокировка прямого доступа к страницам ошибок
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteRule ^\.system-pages/(400|401|403|404|500|502)/index\.html$ - [F,L]
+
   ### Удаление index.html из URL
   RewriteCond %{THE_REQUEST} \s/index\.html [NC]
   RewriteRule ^(.*?)index\.html$ /$1 [L,R=301,NC]
-
-  ### Запрет доступа к index.html напрямую
-  RewriteCond %{THE_REQUEST} \s(.*?)/index\.html [NC]
-  RewriteRule ^(.*?)/index\.html$ /$1 [L,R=301,NC]
 
   ### Обработка множественных слешей
   RewriteCond %{THE_REQUEST} ^(?:GET|POST)\ //+([^\ ]*)
@@ -40,13 +41,13 @@ ServerSignature Off
   RewriteCond %{QUERY_STRING} ^$
   RewriteRule .? %{REQUEST_URI}? [R=301,L]
 
-  ### Добавление слеша в конце URL для директорий
+  ### Добавление слеша для директорий
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_URI} !(\.\w+$|/|offline/index\.html$)
   RewriteRule [^/]$ %{REQUEST_URI}/ [R=301,L]
 </IfModule>
 
-### MIME-типы
+### Настройки MIME-типов
 <IfModule mod_mime.c>
   AddType image/jpeg .jpg .jpeg .jpe
   AddType image/png .png
@@ -61,11 +62,11 @@ ServerSignature Off
   AddType image/avif .avif
   AddEncoding gzip .svgz
   
-  AddType application/javascript js
-  AddType text/css css
-  AddType font/ttf ttf
-  AddType font/woff woff
-  AddType font/woff2 woff2
+  AddType application/javascript .js
+  AddType text/css .css
+  AddType font/ttf .ttf
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
 </IfModule>
 
 ### Кэширование
@@ -116,7 +117,7 @@ ServerSignature Off
   Header always set X-XSS-Protection "1; mode=block"
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; worker-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
   Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
 
   <FilesMatch "\.(ico|jpg|jpeg|png|gif|webp|bmp|tiff|svg|apng|heif|heic|avif|css|js|woff|woff2|ttf)$">
@@ -125,29 +126,18 @@ ServerSignature Off
 
   <FilesMatch "serviceWorker\.js$">
     Header set Service-Worker-Allowed "/"
-    Header set Access-Control-Allow-Origin "*"
     Header set Cache-Control "no-cache, must-revalidate"
   </FilesMatch>
 </IfModule>
 
-### Пользовательские страницы ошибок
+### Страницы ошибок
 ErrorDocument 400 /.system-pages/400/index.html
 ErrorDocument 401 /.system-pages/401/index.html
 ErrorDocument 403 /.system-pages/403/index.html
 ErrorDocument 404 /.system-pages/404/index.html
 ErrorDocument 500 /.system-pages/500/index.html
 ErrorDocument 502 /.system-pages/502/index.html
-ErrorDocument 503 /.system-pages/503/index.html
-
-### Запрет доступа к системным файлам
-<FilesMatch "^\..*|\.(env|htaccess|htpasswd|ini|log|sh|sql)$">
-  Require all denied
-</FilesMatch>
-
-### Разрешаем доступ к оффлайн-странице
-<FilesMatch "offline/index\.html$">
-  Require all granted
-</FilesMatch>
+ErrorDocument 503 /offline/index.html
 
 ### Установка переменной окружения
 SetEnv SERVER_ADMIN info@alean.ru
