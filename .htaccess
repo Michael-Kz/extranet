@@ -137,7 +137,7 @@ ErrorDocument 403 /.system-pages/403/index.html
 ErrorDocument 404 /.system-pages/404/index.html
 ErrorDocument 500 /.system-pages/500/index.html
 ErrorDocument 502 /.system-pages/502/index.html
-ErrorDocument 503 /.system-pages/offline/index.html
+ErrorDocument 503 /.system-pages/503/index.html
 
 ### Запрет доступа к системным файлам
 <FilesMatch "^\..*|\.(env|htaccess|htpasswd|ini|log|sh|sql)$">
