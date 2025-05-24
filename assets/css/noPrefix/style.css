@@ -489,7 +489,7 @@
   }
 
   .accordion__item_show .accordion__header {
-    color: #5b8ff5;
+
   }
 
   .accordion__item:not(.accordion__item_show) .accordion__header {
