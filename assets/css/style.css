@@ -561,9 +561,7 @@
     border-radius: 0;
   }
 
-  .accordion__item_show .accordion__header {
- 
-  }
+  .accordion__item_show .accordion__header {}
 
   .accordion__item:not(.accordion__item_show) .accordion__header {
     -webkit-transition: all 0.3s;
@@ -741,6 +739,7 @@
     -ms-user-select: none;
     user-select: none;
     will-change: transform;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     /* -webkit-transition: var(--animation-speed);
     -o-transition: var(--animation-speed);
@@ -1595,7 +1594,9 @@
   .questions__accordion {}
 
   .questions__button {
-        width: 100%;
+    width: 100%;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
     max-width: max-content;
   }
 
@@ -1824,13 +1825,13 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
+    background: -o-linear-gradient(top,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.3) 100%);
     background: -webkit-gradient(linear,
         left top, left bottom,
         from(rgba(0, 0, 0, 0)),
         to(rgba(0, 0, 0, 0.3)));
-    background: -o-linear-gradient(top,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.3) 100%);
     background: linear-gradient(180deg,
         rgba(0, 0, 0, 0) 0%,
         rgba(0, 0, 0, 0.3) 100%);
@@ -2402,6 +2403,7 @@
       display: none;
     }
 
+
     .additional-information {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
@@ -2451,6 +2453,11 @@
     .slider[data-scale='true'] {
       /* max-width: clamp(18.75rem, 18.75rem + 10vw, 21rem); */
     }
+
+    .footer__promo, 
+    .advantages__wrapper {
+      padding: 0 24px;
+    }
   }
 
   @media (width > 1920px) {
@@ -2486,6 +2493,7 @@
     .footer__menu-container {
       margin-top: 30px;
     }
+
 
     .partners__benefits,
     .partners__members {

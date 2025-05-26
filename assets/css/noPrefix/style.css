@@ -488,9 +488,7 @@
     border-radius: 0;
   }
 
-  .accordion__item_show .accordion__header {
-
-  }
+  .accordion__item_show .accordion__header {}
 
   .accordion__item:not(.accordion__item_show) .accordion__header {
     transition: all 0.3s;
@@ -1262,7 +1260,7 @@
   .questions__accordion {}
 
   .questions__button {
-        width: 100%;
+    width: 100%;
     max-width: max-content;
   }
 
@@ -1933,6 +1931,11 @@
     .slider[data-scale='true'] {
       /* max-width: clamp(18.75rem, 18.75rem + 10vw, 21rem); */
     }
+
+    .footer__promo, 
+    .advantages__wrapper {
+      padding: 0 24px;
+    }
   }
 
   @media (width > 1920px) {
@@ -1961,6 +1964,7 @@
     .footer__menu-container {
       margin-top: 30px;
     }
+
 
     .partners__benefits,
     .partners__members {
