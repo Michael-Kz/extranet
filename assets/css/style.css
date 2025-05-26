@@ -1594,7 +1594,10 @@
 
   .questions__accordion {}
 
-  .questions__button {}
+  .questions__button {
+        width: 100%;
+    max-width: max-content;
+  }
 
   .additional {}
 
