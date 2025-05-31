@@ -1578,7 +1578,7 @@
     .promo {
       flex-wrap: nowrap;
       height: 880px;
-      background-position: 80%;
+      background-position: 65%;
     }
 
     .promo__text {
@@ -1780,6 +1780,7 @@
 
     .promo {
       background-image: url('/assets/images/backgrounds/bg-900.webp');
+      background-position: 60%;
     }
 
     .slider--placement-options {
@@ -1813,7 +1814,8 @@
     .promo__text {
       flex: 0 0 50%;
     }
-        .advantages__count-members {
+
+    .advantages__count-members {
       flex: 0 0 100%;
     }
   }
@@ -1933,7 +1935,7 @@
       /* max-width: clamp(18.75rem, 18.75rem + 10vw, 21rem); */
     }
 
-    .footer__promo, 
+    .footer__promo,
     .advantages__wrapper {
       padding: 0 24px;
     }
@@ -1972,6 +1974,13 @@
       flex: 0 0 46%;
       align-items: center;
     }
+  }
+}
+
+@media (width < 1920px) {
+
+  .promo {
+    background-position: center;
   }
 }
 
