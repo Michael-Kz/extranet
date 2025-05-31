@@ -1797,9 +1797,7 @@
       max-width: clamp(36rem, -1.5rem + 100vw, 54.75rem);
     }
 
-    .advantages__count-members {
-      flex: 0 0 100%;
-    }
+
 
     .accordion__item:not(.accordion__item_show) .accordion__wrapper {
       padding-bottom: 16px;
@@ -1814,6 +1812,9 @@
 
     .promo__text {
       flex: 0 0 50%;
+    }
+        .advantages__count-members {
+      flex: 0 0 100%;
     }
   }
 
