@@ -19,11 +19,11 @@ class Slider {
 
   static #instances = []
 
-  static checkSupportPassiveEvents () {
+  static checkSupportPassiveEvents() {
     let passiveSupported = false
     try {
       const options = Object.defineProperty({}, 'passive', {
-        get () {
+        get() {
           passiveSupported = true
         }
       })
@@ -44,7 +44,7 @@ class Slider {
    * @param {Object} config
    * @param {String} prefix
    */
-  constructor (el, config = {}, prefix = 'slider__') {
+  constructor(el, config = {}, prefix = 'slider__') {
     this.#state = {
       prefix,
       el,
@@ -94,7 +94,7 @@ class Slider {
    * @param {HTMLElement} elSlider
    * @returns {?Slider}
    */
-  static getInstance (elSlider) {
+  static getInstance(elSlider) {
     const found = this.#instances.find(el => el.target === elSlider)
     if (found) {
       return found.instance
@@ -107,7 +107,7 @@ class Slider {
    * @param {Object} config
    * @param {String} prefix
    */
-  static getOrCreateInstance (target, config = {}, prefix = 'slider__') {
+  static getOrCreateInstance(target, config = {}, prefix = 'slider__') {
     const elSlider =
       typeof target === 'string' ? document.querySelector(target) : target
     const result = this.getInstance(elSlider)
@@ -119,7 +119,7 @@ class Slider {
     return slider
   }
 
-  static createInstances () {
+  static createInstances() {
     document.querySelectorAll('[data-slider="slider"]').forEach(el => {
       const { dataset } = el
       const params = {}
@@ -137,25 +137,25 @@ class Slider {
     })
   }
 
-  slideNext () {
+  slideNext() {
     this.#state.direction = 'next'
     this.#move()
   }
 
-  slidePrev () {
+  slidePrev() {
     this.#state.direction = 'prev'
     this.#move()
   }
 
-  slideTo (index) {
+  slideTo(index) {
     this.#moveTo(index)
   }
 
-  reset () {
+  reset() {
     this.#reset()
   }
 
-  get autoplay () {
+  get autoplay() {
     return {
       start: () => {
         this.#config.autoplay = true
@@ -169,7 +169,7 @@ class Slider {
     }
   }
 
-  dispose () {
+  dispose() {
     this.#detachEvents()
     const transitionNoneClass =
       this.#state.prefix + this.constructor.#TRANSITION_NONE
@@ -181,9 +181,8 @@ class Slider {
       el.style.transform = ''
       el.classList.remove(activeClass)
     })
-    const selIndicators = `${this.#state.prefix}${
-      this.constructor.#EL_INDICATOR_ACTIVE
-    }`
+    const selIndicators = `${this.#state.prefix}${this.constructor.#EL_INDICATOR_ACTIVE
+      }`
     document.querySelectorAll(`.${selIndicators}`).forEach(el => {
       el.classList.remove(selIndicators)
     })
@@ -195,7 +194,7 @@ class Slider {
     this.constructor.#instances.splice(index, 1)
   }
 
-  #onClick (e) {
+  #onClick(e) {
     if (this.#state.isMoving) {
       e.preventDefault()
     }
@@ -225,15 +224,15 @@ class Slider {
     this.#config.loop ? this.#autoplay() : null
   }
 
-  #onMouseEnter () {
+  #onMouseEnter() {
     this.#autoplay('stop')
   }
 
-  #onMouseLeave () {
+  #onMouseLeave() {
     this.#autoplay()
   }
 
-  #onTransitionStart () {
+  #onTransitionStart() {
     if (this.#config.loop) {
       if (this.#state.isBalancing) {
         return
@@ -245,17 +244,17 @@ class Slider {
     }
   }
 
-  #onTransitionEnd () {
+  #onTransitionEnd() {
     if (this.#config.loop) {
       this.#state.isBalancing = false
     }
   }
 
-  #onDragStart (e) {
+  #onDragStart(e) {
     e.preventDefault()
   }
 
-  #onVisibilityChange () {
+  #onVisibilityChange() {
     if (document.visibilityState === 'hidden') {
       this.#autoplay('stop')
     } else if (document.visibilityState === 'visible' && this.#config.loop) {
@@ -263,7 +262,7 @@ class Slider {
     }
   }
 
-  #touchStart (e) {
+  #touchStart(e) {
     this.#state.isMoving = false
     this.#autoplay('stop')
     const event = e.type.search('touch') === 0 ? e.touches[0] : e
@@ -273,7 +272,7 @@ class Slider {
     this.#state.isTouchMoving = false
   }
 
-  #touchEnd (e) {
+  #touchEnd(e) {
     if (!this.#state.isSwiping) {
       return
     }
@@ -331,7 +330,7 @@ class Slider {
     this.#state.isBalancing = false
   }
 
-  #touchMove (e) {
+  #touchMove(e) {
     if (!this.#state.isSwiping) {
       return
     }
@@ -373,33 +372,56 @@ class Slider {
     }
   }
 
-  #attachEvents () {
+  #attachEvents() {
     if (this.#config.scale) {
-      const activeClass = this.#state.prefix + this.constructor.#EL_ITEM_ACTIVE
-      this.#state.hoverHandlers = []
+      const activeClass = this.#state.prefix + this.constructor.#EL_ITEM_ACTIVE;
+      this.#state.hoverHandlers = [];
 
-      this.#state.elListItem.forEach(item => {
+      // Проверяем, является ли устройство сенсорным
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+      // Если это сенсорное устройство - выходим
+      if (isTouchDevice) return;
+
+      this.#state.elListItem.forEach((item, index) => {
         const onMouseEnter = () => {
           if (!item.classList.contains(activeClass)) {
-            const elState = this.#state.els.find(el => el.el === item)
-            const currentTranslate = elState ? elState.translate : 0
-item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px)`
-            // item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px) scale(1.1)`
+            const elState = this.#state.els.find(el => el.el === item);
+            const currentTranslate = elState ? elState.translate : 0;
+
+            // Находим активный элемент
+            const activeIndex = this.#state.activeItems.findIndex(state => state === 1);
+            const isNextToActive = Math.abs(index - activeIndex) === 1;
+
+            // Применяем увеличение
+            item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px) scale(1.1)`;
+            item.style.marginRight = '';
+
+            // Для элементов рядом с активным - особый отступ
+            item.style.marginLeft = isNextToActive ? '' : '';
+
+            // Поднимаем элемент над остальными
+            item.style.zIndex = '10';
           }
-        }
+        };
 
         const onMouseLeave = () => {
           if (!item.classList.contains(activeClass)) {
-            const elState = this.#state.els.find(el => el.el === item)
-            const currentTranslate = elState ? elState.translate : 0
-            item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px)`
-          }
-        }
+            const elState = this.#state.els.find(el => el.el === item);
+            const currentTranslate = elState ? elState.translate : 0;
 
-        item.addEventListener('mouseenter', onMouseEnter)
-        item.addEventListener('mouseleave', onMouseLeave)
-        this.#state.hoverHandlers.push({ item, onMouseEnter, onMouseLeave })
-      })
+            // Возвращаем все свойства к исходным значениям
+            item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px)`;
+            item.style.marginRight = '';
+            item.style.marginLeft = '';
+            item.style.zIndex = '';
+          }
+        };
+
+        item.addEventListener('mouseenter', onMouseEnter);
+        item.addEventListener('mouseleave', onMouseLeave);
+        this.#state.hoverHandlers.push({ item, onMouseEnter, onMouseLeave });
+      });
     }
 
     this.#state.events = {
@@ -463,7 +485,7 @@ item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px)`
     this.#resizeObserver.observe(this.#state.elWrapper)
   }
 
-  #detachEvents () {
+  #detachEvents() {
     Object.keys(this.#state.events).forEach(type => {
       if (this.#state.events[type][2]) {
         const el = this.#state.events[type][0]
@@ -484,7 +506,7 @@ item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px)`
     }
   }
 
-  #autoplay (action) {
+  #autoplay(action) {
     if (!this.#config.autoplay) {
       return
     }
@@ -502,7 +524,7 @@ item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px)`
     }
   }
 
-  #balanceItems (once = false) {
+  #balanceItems(once = false) {
     if (!this.#state.isBalancing && !once) {
       return
     }
@@ -544,7 +566,7 @@ item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px)`
     }
   }
 
-  #updateClasses () {
+  #updateClasses() {
     const activeClass = this.#state.prefix + this.constructor.#EL_ITEM_ACTIVE
     const indicatorActiveClass =
       this.#state.prefix + this.constructor.#EL_INDICATOR_ACTIVE
@@ -574,7 +596,7 @@ item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px)`
     })
   }
 
-  #move () {
+  #move() {
     if (this.#state.direction === 'none') {
       const transform = this.#state.translate
       this.#state.elItems.style.transform = `translate3D(${transform}px, 0px, 0.1px)`
@@ -613,14 +635,14 @@ item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px)`
       this.#state.direction === 'next'
         ? (currentActiveIndex + 1) % this.#state.elListItem.length
         : (currentActiveIndex - 1 + this.#state.elListItem.length) %
-          this.#state.elListItem.length
+        this.#state.elListItem.length
     this.#state.activeItems[nextActiveIndex] = 1
 
     this.#updateClasses()
     this.#state.translate = transform
     this.#state.elItems.style.transform = `translate3D(${transform}px, 0px, 0.1px)`
   }
-  #moveTo (index) {
+  #moveTo(index) {
     const delta = this.#state.activeItems.reduce(
       (acc, current, currentIndex) => {
         const diff = current ? index - currentIndex : acc
@@ -636,7 +658,7 @@ item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px)`
     }
   }
 
-  #init () {
+  #init() {
     this.#state.els = []
     this.#state.translate = 0
     this.#state.activeItems = new Array(this.#state.elListItem.length).fill(0)
@@ -677,7 +699,7 @@ item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px)`
     this.#updateClasses()
     this.#autoplay()
   }
-  #reset () {
+  #reset() {
     const transitionNoneClass =
       this.#state.prefix + this.constructor.#TRANSITION_NONE
 
@@ -703,7 +725,7 @@ item.style.transform = `translate3D(${currentTranslate}px, 0px, 0.1px)`
     })
   }
 
-  #updateExProperties () {
+  #updateExProperties() {
     const els = this.#state.els.map(item => item.el)
     const orders = this.#state.els.map(item => item.order)
     this.#state.exOrderMin = Math.min(...orders)

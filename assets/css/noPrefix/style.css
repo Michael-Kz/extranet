@@ -689,7 +689,9 @@
     margin-left: calc(var(--gap-items) * 1.1);
   }
 
-  .slider[data-scale='true'] .slider__item:not(.slider__item--active):hover {}
+  .slider[data-scale='true'] .slider__item:not(.slider__item--active):hover {
+    transform-origin: center;
+  }
 
   .video-player {
     position: relative;
